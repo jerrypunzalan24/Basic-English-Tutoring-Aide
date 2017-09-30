@@ -22,9 +22,7 @@ include_once('sidepanel.php');
 						<div class ='content=heading'><h4 class="title">Denisse Joyce Alido</h4>
 							<p class ='category'>"Quote"</p>
 						</div>
-						<div class ='content'><p>The quick brown fox jumps over the lazy dogs.
-							The quick brown fox jumps over the lazy dogs.
-							The quick brown fox jumps over the lazy dogs.The quick brown fox jumps over the lazy dogs.The quick brown fox jumps over the lazy dogs.The quick brown fox jumps over the lazy dogs.The quick brown fox jumps over the lazy dogs.The quick brown fox jumps over the lazy dogs.</p>
+						<div class ='content'><p>Currently a third year BS Computer Science student and is involved with two organizations on her field. Key area is often in documenting</p>
 						</div>
 						<div style ='clear:both'>
 							<div class ='content'>
@@ -77,7 +75,7 @@ include_once('sidepanel.php');
 							<p class ='category'>"Quote"</p>
 						</div>
 						<!-- Fill up -->
-						<div class ='content'><p>An 18 year old 3rd year student studying Bachelor Science in Computer Science(BSCS) in University of the East. </p>
+						<div class ='content'><p>An 18 year old 3rd year student studying Bachelor Science in Computer Science(BSCS) in University of the East. Programming and learning more about programming is his passion.</p>
 						</div>
 						<div style ='clear:both'>
 							<div class ='content'>
