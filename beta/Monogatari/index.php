@@ -179,11 +179,11 @@ if(!$_SESSION['login']){
 	</section>
 
 	<!-- Main Screen -->
-	<section data-menu="main" data-background="">
+	<section data-menu="main" data-background="../assets/img/background-<?php echo (($_GET['gameType'] == 'Start') ? "sachi" : "henrik");?>.png">
 		<audio type="audio/mpeg" data-component="ambient"></audio>
 
 		<div class="vertical align-right bottom animated bounceIn " data-ui="inner-menu">
-			<button data-action="start" data-string="Startsss">Startsss</button>
+			<button data-action="start" data-string="Startsss">Start</button>
 		</div>
 	</section>
 
@@ -213,7 +213,7 @@ if(!$_SESSION['login']){
 	</section>
 
 	<!-- Settings Screen -->
-	<section data-menu="settings" data-background="" class="vertical align-center">
+	<section data-menu="settings" >
 		<h2 data-string="Settings">Settings</h2>
 		<div data-settings="audio">
 			<h3 data-string="Audio">Audio</h3>
