@@ -195,7 +195,6 @@ var script = {
 		"show "+character+" Happy center",
 		"finish",
 		"Congratulations for finishing this topic. I hope you learn something",
-		"jump " + engine.Label
 	]
 	,
 	//End Possessive Nouns Questions
