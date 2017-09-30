@@ -195,6 +195,7 @@ var script = {
 		"show "+character+" Happy center",
 		"finish",
 		"Congratulations for finishing this topic. I hope you learn something",
+		"jump " + engine.Label
 	]
 	,
 	//End Possessive Nouns Questions
@@ -516,7 +517,6 @@ var script = {
 		"notify Welcome",
 		"henrik Hi {{player.Name}} Welcome to Basic English Tutoring Aid!",
 		"show henrik Normal right",
-				"Do": "jump SimpleTense"
 		{
             "Choice": {
                 "Dialog": "Henrik Which lesson are we going to study today?",
