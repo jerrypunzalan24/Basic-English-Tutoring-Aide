@@ -516,29 +516,31 @@ var script = {
 		"notify Welcome",
 		"henrik Hi {{player.Name}} Welcome to Basic English Tutoring Aid!",
 		"show henrik Normal right",
-		{"Choice": {
-			"Dialog": "Henrik Which lesson are we going to study today?",
-			"CSAdjectives": {
-				"Text": "Comparative and Superlative Adjectives",
-				"Do": "jump CSAdjectives"
-			},
-			"Adverbs": {
-				"Text": "Adverbs",
-				"Do": "jump Adverbs"
-			},
-			"SimpleTense": {
-				"Text": "Simple Tense",
 				"Do": "jump SimpleTense"
-			},
-			"ProgPerfTense": {
-				"Text": "Progressive and Perfect Tense",
-				"Do": "jump ProgPerfTense"
-			},
-			"PerfProgTense":{
-				"Text": "Perfect Progressive Tense",
-				"Do": "jump PerfProgTense"
-			}
-		}
+		{
+            "Choice": {
+                "Dialog": "Henrik Which lesson are we going to study today?",
+                "CSAdjectives": {
+                    "Text": "Comparative and Superlative Adjectives",
+                    "Do": "jump CSAdjectives"
+                },
+                "Adverbs": {
+                    "Text": "Adverbs",
+                    "Do": "jump Adverbs"
+                },
+                "SimpleTense": {
+                    "Text": "Simple Tense",
+                    "Do": "jump SimpleTense"
+                },
+                "PresProgTense": {
+                    "Text": "Present Progressive Tense",
+                    "Do": "jump PresProgTense"
+                },
+                "PresPerfProgTense":{
+                    "Text": "Perfect Progressive Tense",
+                    "Do": "jump PresPerfProgTense"
+                }
+		    }
 		}
 	],
 	"CSAdjectives":[
@@ -564,15 +566,15 @@ var script = {
 				"Dialog": "henrik Choose the correct form of the adjectives in the parenthesis: The (hot) _____ desert of all is the Sahara and it's in Africa.",
 				"Incorrect":{
 					"Text": "Hot",
-					"Do": "jump Incorrect1"
+					"Do": "jump Incorrect"
 				},
-				"Incorrect":{
+				"Incorrect1":{
 					"Text": "Hotter",
-					"Do": "jump Incorrect1"
+					"Do": "jump Incorrect"
 				},
 				"Correct":{
 					"Text": "Hottest",
-					"Do": "jump Correct1"
+					"Do": "jump Correct"
 				}
 			}
 		}
@@ -591,7 +593,7 @@ var script = {
 					"Text": "Tidier",
 					"Do": "jump Correct"
 				},
-				"Incorrect":{
+				"Incorrect1":{
 					"Text": "Tidiest",
 					"Do": "jump Incorrect"
 				}
@@ -633,11 +635,373 @@ var script = {
 					"Text": "More difficult",
 					"Do": "jump Correct"
 				},
-				"Incorrect":{
+				"Incorrect1":{
 					"Text": "Most difficult",
 					"Do": "jump Incorrect"
 				}
 			}
 		}
 	],
+    "Adverbs":[
+        "henrik An <b>adverb</b> is an article of speech that modifies adverbs, verbs, adjectives, clauses, or sentences.",
+        "henrik When an adverb is used in a sentence, it will answer one of the following questions: <i>how?</i>, <i>when?</i>, <i>what?</i>, <i>why?</i>, <i>in what way?</i>, <i>how often?</i>, <i>how much?</i>, <i>in what condition?</i>, and <i>to what degree?</i>",
+        "henrik Adverbs can often be recognized by their <i><b>-ly</b></i> endings.",
+        "henrik For example: She walked <i>calmly</i> towards me. Calmly is an adverb used to modify the word <i>walked</i>, and answering the question: <i>in what way?</i>",
+        "henrik However, there are also many adverbs that <b>do not</b> require an <i>-ly</i> ending.",
+        "henrik For example: I went to the store today. The word '<i>today</i>' is an adverb which modifies the word <i>went</i>, and answers the question: <i>when?</i>",
+        "henrik Now let's see what you're learned!",
+        "jump Q1Adverbs"
+    ],
+    "Q1Adverbs":[
+        "Now for Question #1",
+        "change Q2Adverbs",
+        {
+            "Choice":{
+                "Dialog": "What does the <b>extremely</b> modify: My grandfather walks extremely slowly.",
+                "Incorrect":{
+                    "Text": "Walks",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "Slowly",
+                    "Do": "jump Correct"
+                },
+                "Incorrect1":{
+                    "Text": "Grandfather",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q2Adverbs":[
+        "Now for Question #2",
+        "change Q3Adverbs",
+        {
+            "Choice":{
+                "Dialog": "What does the <b>quite</b> modify: Your roommate drives quite fast, doesn't he?",
+                "Correct":{
+                    "Text": "Fast",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "Drives",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "Roommate",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q3Adverbs":[
+        "Now for Question #3",
+        "change Q4Adverbs",
+        {
+            "Choice":{
+                "Dialog": "What does the <b>rarely</b> modify: We rarely go to the movies on the weekends.",
+                "Correct":{
+                    "Text": "Go",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "We",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "To",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q4Adverbs":[
+        "Now for Question #4",
+        "change Complete",
+        {
+            "Choice":{
+                "Dialog": "What does the <b>well</b> modify: My niece reads well for a five-year old.",
+                "Incorrect":{
+                    "Text": "Niece",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "For",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "Reads",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ],
+    "SimpleTense":[
+        "henrik The <i>simple tense</i> is used to: give your opinion, talk about schedules, talk about your daily habits, and give facts.",
+        "henrik To give opinion: I <b>like</b> ice cream. I <b>don't like</b> spicy food.",
+        "henrik To talk about schedules: The library <b>opens</b> at eight. It <b>doesn't open at 7.</b>",
+        "henrik To talk about your daily habits: Sara <b>eats</b> a slice of cheese for breakfast every day. She <b>doesn't</b> eat cereal.",
+        "henrik To give facts: The earth <b>circles</b> the sun. The moon <b>doesn't circle</b> the sun.",
+        "henrik Now let's see what you've learned!",
+        "jump Q1STense"
+    ],
+    "Q1STense":[
+        "Now for Question #1",
+        "change Q2STense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best matches the sentence: The earth _____ around the sun.",
+                "Incorrect":{
+                    "Text": "does turns",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "turn",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "turns",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ],
+    "Q2STense":[
+        "Now for Question #2",
+        "change Q3STense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best matches the sentence: A liar is someone who _____ the truth.",
+                "Incorrect":{
+                    "Text": "does tells",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "doesn't tell",
+                    "Do": "jump Correct"
+                },
+                "Incorrect1":{
+                    "Text": "tells",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q3STense":[
+        "Now for Question #3",
+        "change Q4STense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best matches the sentence: A novelist _____ novels.",
+                "Correct":{
+                    "Text": "writes",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "doesn't write",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "does writes",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q4STense":[
+        "Now for Question #4",
+        "change Complete",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best matches the sentence: Vegetarians _____ meat.",
+                "Incorrect":{
+                    "Text": "eats",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "doesn't eat",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "don't eat",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ],
+    "PresProgTense":[
+        "henrik Also known as Present Continuous.",
+        "henrik Used to talk about actions happening at the time of speaking.",
+        "henrik Example #1: Where is Mark? He <b>is taking</b> a bath.",
+        "henrik Example #2: What <b>are you doing</b> right now? You are <b>learning</b> English.",
+        "henrik Can also be used when an action has started but hasn't finished yet.",
+        "henrik Example #3: I <b>am reading</b> a book; it's a nice book.",
+        "henrik Now let's see what you've learned!",
+        "change Q1PresProgTense"
+    ],
+    "Q1PresProgTense":[
+        "Now for Question #1",
+        "change Q2PresProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: Sara _____ to the movies.",
+                "Incorrect":{
+                    "Text": "going",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "is correct",
+                    "Do": "jump Correct"
+                },
+                "Incorrect1":{
+                    "Text": "are going",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q2PresProgTense":[
+        "Now for Question #2",
+        "change Q3PresProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: Listen to the birds. They _____.",
+                "Incorrect":{
+                    "Text": "singing",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "is singing",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "are singing",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ],
+    "Q3PresProgTense":[
+        "Now for Question #3",
+        "change Q4PresProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: I feel happy because I _____ a good time with you.",
+                "Correct":{
+                    "Text": "am having",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "is having",
+                    "Do": "jump Incorrect"
+                },
+                "Incorrect1":{
+                    "Text": "are having",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q4PresProgTense":[
+        "Now for Question #4",
+        "change Complete",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: The backpack _____ very beautiful.",
+                "Incorrect":{
+                    "Text": "be",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "is",
+                    "Do": "jump Correct"
+                },
+                "Incorrect1":{
+                    "Text": "are",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "PresPerfProgTense":[
+        "henrik Also known as Present Perfect Continuous.",
+        "henrik The Present Perfect Progressive expresses an action that recently stopped or is still going on or a finished action that influenced the present.",
+        "henrik It puts emphasis on the duration or course of the action.",
+        "henrik Action that recently stopped or is still going on.",
+        "henrik Example #1: I <i>have been living</i> here since 2001.",
+        "henrik Finished action that influenced the present.",
+        "henrik Example #2: I <i>have been working</i> all afternoon.",
+        "henrik Emphasis on the duration or course of an action.",
+        "henrik Example #3: She <i>has been writing</i> for two hours.",
+        "henrik Now let's see what you've learned!",
+        "change Q1PresPerfProgTense"
+    ],
+    "Q1PresPerfProgTense":[
+        "Now for Question #1",
+        "change Q2PresPerfProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: Emma _____ for five years.",
+                "Correct":{
+                    "Text": "has been learning",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "have been learning",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q2PresPerfProgTense":[
+        "Now for Question #2",
+        "change Q3PresPerfProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: Paul _____ to the radio all day.",
+                "Correct":{
+                    "Text": "has been listening",
+                    "Do": "jump Correct"
+                },
+                "Incorrect":{
+                    "Text": "have been listening",
+                    "Do": "jump Incorrect"
+                }
+            }
+        }
+    ],
+    "Q3PresPerfProgTense":[
+        "Now for Question #3",
+        "change Q4PresPerfProgTense",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: I _____ for Daniel for 20 minutes.",
+                "Incorrect":{
+                    "Text": "has been waiting",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "have been waiting",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ],
+    "Q4PresPerfProgTense":[
+        "Now for Question #4",
+        "change Complete",
+        {
+            "Choice":{
+                "Dialog": "Choose the word/s that best match the sentence: They _____ here since 2013.",
+                "Incorrect":{
+                    "Text": "has been living",
+                    "Do": "jump Incorrect"
+                },
+                "Correct":{
+                    "Text": "have been living",
+                    "Do": "jump Correct"
+                }
+            }
+        }
+    ]
 }
