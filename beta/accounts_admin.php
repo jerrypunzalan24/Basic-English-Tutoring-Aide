@@ -104,7 +104,7 @@ if(isset($_SESSION['success']))
                                                 Edit
                                                 </button>&nbsp;
                                                 <a href=\"#\" class ='btn btn-danger btn-fill' onclick=\"$('#dialog_{$row['id']}').modal('show');\" role=\"button\" class=\"btn-show-modal\" title=\"Delete?\">
-                                                <span class ='glyphicon glyphicon-remove'></span>Delete</a>&nbsp;<button onclick =\"window.location.href = '{$generate_report}'\" class ='btn btn-primary btn-fill ".(($row['admin'] == 1)? "disabled" : "" )."' style ='background-color: #009700; border-color: #009700'><span class ='glyphicon glyphicon-file'></span>Report</button></td>";
+                                                <span class ='glyphicon glyphicon-remove'></span>Delete</a>&nbsp;<button  class ='btn btn-primary btn-fill ".(($row['admin'] == 1)? "disabled'" : "onclick =\"window.location.href = '{$generate_report}'\"" )." style ='background-color: #009700; border-color: #009700'><span class ='glyphicon glyphicon-file'></span>Report</button></td>";
                                           
                                                 showModal("<p>Are you sure you want to delete this record?</p>" . (($row['id'] == $_SESSION['id'])? "<p class ='text-warning'>You will be logged out if you delete a logged in user</p>" : ""), "dialog_{$row['id']}", $delete);
                                           
