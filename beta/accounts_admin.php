@@ -5,10 +5,23 @@ if(!isset($_SESSION['login']) || !$_SESSION['admin']){
    $_SESSION['error'] = '<b>Error</b> - Please login to continue';
         header("Location: login.php");
 }
+
 $title = 'Accounts';
 $color = 'blue';
 $active = array_fill(0,8,''); 
-$active[7]='active'; include_once('sidepanel.php');?>
+$active[7]='active'; include_once('sidepanel.php');
+if(isset($_SESSION['error']))
+{
+	showNotif("alert-danger", $_SESSION['error']);
+	unset($_SESSION['error']);
+}
+if(isset($_SESSION['success']))
+{
+	showNotif("alert-success", $_SESSION['success']);
+	unset($_SESSION['success']);
+}
+?>
+
   <link href = '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css' rel ='stylesheet'/>
   <link href = 'https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css' rel = 'stylesheet'/>
   <link href ='https://cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css' rel = 'stylesheet'/>
@@ -71,7 +84,6 @@ $active[7]='active'; include_once('sidepanel.php');?>
                                         echo '<th>First Name</th>';
                                         echo '<th>Last Name</th>';
                                         echo '<th>Action</th>';
-                                   
                                     echo '</thead>';
                                     echo '</tbody>';
                                         //$i = 0;
@@ -79,7 +91,7 @@ $active[7]='active'; include_once('sidepanel.php');?>
                                         {
                                             $edit = "edit_admin.php?id=" . $row['id'];
                                             $delete = "delete.php?id=" . $row['id'];
-                                            $change = 'assignRole.php?id='.$row['id'];
+                                            $generate_report = 'export_results.php?id='.$row['id'];
                                             $roleString = ($row['admin'] == 1) ? "<span class ='glyphicon glyphicon-eye-open'></span>Admin" : "<span class ='glyphicon glyphicon-user'></span>User&nbsp;&nbsp;&nbsp;";
                                             echo '<tr>';
                                                 echo "<td>". $row['id'] ."</td>";
@@ -87,18 +99,16 @@ $active[7]='active'; include_once('sidepanel.php');?>
                                                 echo "<td>". $row['username'] ."</td>";
                                                 echo "<td>". $row['fname'] ."</td>";
                                                 echo "<td>". $row['lname'] ."</td>";
-                                                echo "<td><button class ='btn btn-primary btn-fill ".(($row['id'] == $_SESSION['id'])?"disabled'" : "' onclick = \"window.location.href='{$edit}'\"")." >
+                                                echo "<td style ='padding:0px'><button class ='btn btn-primary btn-fill ".(($row['id'] == $_SESSION['id'])?"disabled'" : "' onclick = \"window.location.href='{$edit}'\"")." >
                                                 <span class ='glyphicon glyphicon-wrench'></span>
                                                 Edit
-                                                </button>&nbsp&nbsp&nbsp
+                                                </button>&nbsp;
                                                 <a href=\"#\" class ='btn btn-danger btn-fill' onclick=\"$('#dialog_{$row['id']}').modal('show');\" role=\"button\" class=\"btn-show-modal\" title=\"Delete?\">
-                                                <span class ='glyphicon glyphicon-remove'></span>Delete</a></td>";
+                                                <span class ='glyphicon glyphicon-remove'></span>Delete</a>&nbsp;<button onclick =\"window.location.href = '{$generate_report}'\" class ='btn btn-primary btn-fill ".(($row['admin'] == 1)? "disabled" : "" )."' style ='background-color: #009700; border-color: #009700'><span class ='glyphicon glyphicon-file'></span>Report</button></td>";
                                           
                                                 showModal("<p>Are you sure you want to delete this record?</p>" . (($row['id'] == $_SESSION['id'])? "<p class ='text-warning'>You will be logged out if you delete a logged in user</p>" : ""), "dialog_{$row['id']}", $delete);
                                           
-                                                showModal("<p>Do you want to change roles?</p>","role_{$row['id']}", $change);
                                             
-                                              
                                             echo '</tr>';
                                         }
                                     echo '</tbody>';

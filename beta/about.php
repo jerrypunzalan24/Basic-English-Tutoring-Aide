@@ -112,6 +112,7 @@ include_once('sidepanel.php');
 						<div style ='clear:both'>
 							<div class ='content'>
 								<hr>
+								<div class="footer">
 									<div class="legend">
 										<i class="fa fa-facebook"></i> Facebook
 										<i class="fa fa-twitter"></i> Twitter

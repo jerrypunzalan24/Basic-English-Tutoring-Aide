@@ -155,11 +155,6 @@ if(!$_SESSION['login']){
 			</div>
 		</div>
 		<ul data-ui="quick-menu" class="align-right dark">
-			<span class="fa fa-arrow-left" data-action="back"></span>
-			<span class="fa fa-eye" data-action="distraction-free"></span>
-			<span class="fa fa-save" data-action="open-menu" data-open="save"></span>
-			<span class="fa fa-undo" data-action="open-menu" data-open="load"></span>
-			<span class="fa fa-gear" data-action="open-menu" data-open="settings"></span>
 			<span class="fa fa-times-circle-o" data-action="end"></span>
 		</ul>
 		<div data-ui="choices" class="vertical align-center middle">

@@ -103,7 +103,7 @@ Tip 2: you can also add an image using data-image tag
 				<li class = '<?php echo $active[3];?>'>
 				    <a href="lessons.php">
 					  <i class="pe-7s-news-paper"></i>
-					  <p>Lessons Overview</p>
+					  <p>Course Outline</p>
 				    </a>
 				</li>
 <!--
@@ -154,7 +154,7 @@ Tip 2: you can also add an image using data-image tag
 
 				    <ul class="nav navbar-nav navbar-right">
 					  <li>
-						<a>Today is : <?php echo date("g:i A");?></a> 
+						<a>Today is : <?php echo date("F d, Y");?></a> 
 					  </li>
 					  <li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">

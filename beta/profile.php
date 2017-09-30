@@ -88,45 +88,29 @@ include_once('sidepanel.php');
 			</div>
 			<div  class ='col-md-12'>
 				<div class ='card'>
-					<div class ='content'>
-						<div class ='row'>
-							<div class ='row'>
-								<div class ='col-md-6'>
-									<div class ='card' align ='center'>
-										<div class ='content'>
-											<?php $fetch_completed = mysqli_query($con, "SELECT * FROM complete_lesson WHERE user_id = {$_SESSION['id']} AND completed = 1");
-											?>
-											<h3 class ='header'>Completed Lesson</h3>
-											<div class ='progress'>
-												<?php 
-												$fetch_lessons = mysqli_query($con, "SELECT * FROM lessons");
-												$get_per = (mysqli_num_rows($fetch_completed) / mysqli_num_rows($fetch_lessons)) * 100; 
-												?>
-												<div class ='progress-bar' role = 'progressbar' style ='width:<?php echo $get_per; ?>%; height: 100px' aria-valuenow='25' aria-valuemin = '0' aria-valuemax = '100'><?php echo "(".mysqli_num_rows($fetch_completed)."/".mysqli_num_rows($fetch_lessons).") ". number_format($get_per, 2);?>%</div>
+					<h3 class ='header'><b>Status</b></h3>
 
-											</div>
-											<p>You're almost there. :)</p>
-										</div>
-									</div>
+					<div class ='row'>
+						<div class ='col-md-12'>
+
+							<div class ='content'>
+
+								<?php $fetch_completed = mysqli_query($con, "SELECT * FROM complete_lesson WHERE user_id = {$_SESSION['id']} AND completed = 1");
+								?>
+								<p class ='lead' style = 'font-size: 1.25em'>Lesson Completed</p>
+								<div class ='progress'>
+									<?php 
+									$fetch_lessons = mysqli_query($con, "SELECT * FROM lessons");
+									$get_per = (mysqli_num_rows($fetch_completed) / mysqli_num_rows($fetch_lessons)) * 100; 
+									?>
+									<div class ='progress-bar' role = 'progressbar' style ='width:<?php echo $get_per; ?>%; height: 100px' aria-valuenow='25' aria-valuemin = '0' aria-valuemax = '100'><?php echo "(".mysqli_num_rows($fetch_completed)."/".mysqli_num_rows($fetch_lessons).") ". number_format($get_per, 2);?>%</div>
+
 								</div>
-								<div class ='col-md-6'>
-									<div class ='card' align ='center'>
-										<div class ='content'>
-											<h3 class ='header'>Overall</h3>
-											<h2 class ='header' style = 'margin-top: 0px;'>96%</h2>
-											<h1></h1>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class ='col-md-12'>
-								<div class ='card' align ='center'>
-									<div class ='content'>
-										<h3 class ='header'></h3>
-									</div>
-								</div>
+
 							</div>
 						</div>
+
+
 					</div>
 				</div>
 			</div>

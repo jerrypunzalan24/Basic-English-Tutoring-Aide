@@ -59,7 +59,6 @@ var characters = {
 		"Color": "#5bcaff",
 		"Directory":"Sachi",
 		"Images":{
-
 			"Normal":"sachinormal.png",
 			"Happy":"sachi.png"
 		}

@@ -78,7 +78,7 @@ session_start();
 					<h4 class="modal-title">Success</h4>
 				</div>
 				<div class="modal-body">
-					<p>Your password code is <b><?php echo $_SESSION['code']?></b></p>
+					<p>Your new password code is <b><?php echo $_SESSION['code']?></b></p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -100,7 +100,6 @@ session_start();
 		<div class ='row'>
 			<div class ='col-md-6 side-bg'>
 				<div class ='content' style = 'padding:40px;' >
-
 				</div>
 			</div>
 			<div class ='col-md-6' style ='padding-left:0px'>

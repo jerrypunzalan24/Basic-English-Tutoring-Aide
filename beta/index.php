@@ -127,6 +127,10 @@ while($row = mysqli_fetch_assoc($query))
 					</div>
 					<div class ='content'>
 						<p>Visual Novels (English 101 with Sachi & Henriks Supermarket)</p>
+						<p>Press left click to interact in the game.</p>
+						<p><b>Game's Interface</b></p>
+						<img src = 'assets/img/gameplay-choice.png' width = '100%'/>
+						<img src = 'assets/img/gameplay-choice-answer.png' width = '100%'/>
 					</div>
 				</div>
 

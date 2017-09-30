@@ -33,7 +33,8 @@ if(isset($_SESSION['success']))
 			<div class="col-md-12">
 				<div class="card">
 					<div class="header">
-						<h4 class="title">Basic English Lessons</h4>
+						<h4 class="title">Course Outline</h4>
+						<p class ='category'>Lessons that will teach you in-game</p>
 					</div>
 					<div class="content table-responsive table-full-width" <?php if($_SESSION['admin']) { echo "style ='padding-left:50px'"; }?>>
 						<?php
@@ -75,8 +76,6 @@ if(isset($_SESSION['success']))
 							<th>Lesson Number</th>
 							<th>Name</th>
 							<?php if(!$_SESSION['admin']){?>
-							<th>Score</th>
-							<th>Status</th>
 							<?php }?>
 							<th>Game Type</th>
 							<?php 
@@ -96,14 +95,8 @@ if(isset($_SESSION['success']))
 								if(!$_SESSION['admin']){
 									$userScore = 0;
 									echo '<td>' . $row['lesson_no'] . '</td>';
-									echo '<td>' . $row['lesson_name'] . '</td>';
-									$fetchComplete = mysqli_query($con, "SELECT * FROM complete_lesson WHERE lesson_id = {$row['lesson_no']} AND user_id = {$_SESSION['id']}") or die(mysqli_error($con));
-									if(mysqli_num_rows($fetchComplete) != 0){
-										while($row1 = mysqli_fetch_assoc($fetchComplete))
-											$userScore = $row1['score'];
-									}
-									echo "<td>{$userScore}/4</td>";
-									echo '<td>' . (($userScore == 4)? "Complete" :"Incomplete"). '</td>';
+									echo "<td><a style = 'text-decoration:none; color: #131313;'href ='https://en.wikipedia.org/wiki/Special:Search?search={$row['lesson_name']}' >{$row['lesson_name']}</a></td>";
+								
 									echo '<td>' . $row['game_type'] . '</td>';
 								}
 								else{
