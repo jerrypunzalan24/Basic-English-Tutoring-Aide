@@ -517,7 +517,6 @@ var script = {
 		"notify Welcome",
 		"henrik Hi {{player.Name}} Welcome to Basic English Tutoring Aid!",
 		"show henrik Normal right",
-				"Do": "jump SimpleTense"
 		{
             "Choice": {
                 "Dialog": "Henrik Which lesson are we going to study today?",
@@ -819,7 +818,7 @@ var script = {
                     "Text": "eats",
                     "Do": "jump Incorrect"
                 },
-                "Incorrect1":{
+                "Incorrect":{
                     "Text": "doesn't eat",
                     "Do": "jump Incorrect"
                 },
@@ -838,7 +837,7 @@ var script = {
         "henrik Can also be used when an action has started but hasn't finished yet.",
         "henrik Example #3: I <b>am reading</b> a book; it's a nice book.",
         "henrik Now let's see what you've learned!",
-        "change Q1PresProgTense"
+        "jump Q1PresProgTense"
     ],
     "Q1PresProgTense":[
         "Now for Question #1",
@@ -854,7 +853,7 @@ var script = {
                     "Text": "is correct",
                     "Do": "jump Correct"
                 },
-                "Incorrect1":{
+                "Incorrect":{
                     "Text": "are going",
                     "Do": "jump Incorrect"
                 }
@@ -871,7 +870,7 @@ var script = {
                     "Text": "singing",
                     "Do": "jump Incorrect"
                 },
-                "Incorrect1":{
+                "Incorrect":{
                     "Text": "is singing",
                     "Do": "jump Incorrect"
                 },
@@ -896,7 +895,7 @@ var script = {
                     "Text": "is having",
                     "Do": "jump Incorrect"
                 },
-                "Incorrect1":{
+                "Incorrect":{
                     "Text": "are having",
                     "Do": "jump Incorrect"
                 }
@@ -917,7 +916,7 @@ var script = {
                     "Text": "is",
                     "Do": "jump Correct"
                 },
-                "Incorrect1":{
+                "Incorrect":{
                     "Text": "are",
                     "Do": "jump Incorrect"
                 }
@@ -935,7 +934,7 @@ var script = {
         "henrik Emphasis on the duration or course of an action.",
         "henrik Example #3: She <i>has been writing</i> for two hours.",
         "henrik Now let's see what you've learned!",
-        "change Q1PresPerfProgTense"
+        "jump Q1PresPerfProgTense"
     ],
     "Q1PresPerfProgTense":[
         "Now for Question #1",
