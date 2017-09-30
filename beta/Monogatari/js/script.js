@@ -114,7 +114,20 @@ var script = {
 		"sachi Possessive nouns are used to indicate ownership ",
 		"sachi Possessive nouns usually are formed by adding an apostrophe (') and s.",
 		"sachi Examples: John's Book, Kerry's Car, Grandma's Mirror",
-		"jump QuestionPossessiveOne",
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"QuestionPossessiveOne":{
+					"Text":"Yes",
+					"Do":"jump QuestionPossessiveOne"
+				},
+				"Possessive":{
+					"Text":"No",
+					"Do":"jump Possessive"
+				}
+				
+			}
+		}
 	],
 	"QuestionPossessiveOne":[
 		"Now for question #1",
@@ -205,7 +218,20 @@ var script = {
 		"sachi Here are some examples of Pronouns: He, She, It, They, I, You, etc.",
 		"sachi Example: Mary is one of the heads of the ToJi Corporation. Becomes: She is one of the heads of the ToJi Corporation.",
 		"Mary, Mr. James, and Tom researched and invented a drug for cancer treatment. Becomes: They researched and invented a drug for cancer treatment.",
-		"jump QuestionPronounsOne"
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"QuestionPronounsOne":{
+					"Text":"Yes",
+					"Do":"jump QuestionPronounsOne"
+				},
+				"Pronouns":{
+					"Text":"No",
+					"Do":"jump Pronouns"
+				}
+				
+			}
+		}
 	],
 	"QuestionPronounsOne":[
 		"Now for question #1",
@@ -265,7 +291,21 @@ var script = {
 		"sachi 'Be' Verbs must match the subject. Examples: I <i>am</i> alone. They <i>are</i> walking together.",
 		"sachi 'Be' Verbs are follwed by a 'not' to form a negative sentence. Examples: I <i>am not</i> alone. They <i>are not</i> walking together.",
 		"sachi 'Be' Verbs are the first word in questions. Examples: <i>Am</i> I alone? <i>Are</i> they walking together?",
-		"jump QuestionBeVerbsOne"
+		
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				
+				"QuestionBeVerbsOne":{
+					"Text":"Yes",
+					"Do":"jump QuestionBeVerbsOne"
+				},
+				"BeVerbs":{
+					"Text":"No",
+					"Do":"jump BeVerbs"
+				}
+			}
+		}
 	],
 	"QuestionBeVerbsOne":[
 		"Now for question #1",
@@ -340,7 +380,20 @@ var script = {
 		"sachi Action Verbs can be transitive or intransitive. Transitive verbs <i>transfer</i> their action to a <b>direct object</b>. Intransitive verbs have nothing to transfer their action to.",
 		"sachi Transitive: The actress <i>wiped</i> the <b>tears</b> from her eyes. (Wiped what? Wiped tears.)",
 		"sachi Intransitive: The windshield wipers <i>wiped</i> across the windshield. (Wiped what? Nothing.)",
-		"jump QuestionActionVerbsOne"
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"QuestionPronounsOne":{
+					"Text":"Yes",
+					"Do":"jump QuestionActionVerbsOne"
+				},
+				"ActionVerbs":{
+					"Text":"No",
+					"Do":"jump ActionVerbs"
+				}
+				
+			}
+		}
 	],
 	"QuestionActionVerbsOne":[
 		"Now for question #1",
@@ -432,7 +485,21 @@ var script = {
 		"sachi He found a <i>nice</i> <b>job</b>.",
 		"sachi Adjectives may also come after certain <b>verbs</b> like <b>be</b>, <b>feel</b>, <b>seem</b>, <b>look</b>.",
 		"sachi He <b>is</b> <i>intelligent</i>. I <b>feel</b> <i>happy</i>. She <b>seems</b> <i>unhappy</i>. They <b>look</b> <i>fantastic</i>.",
-		"jump QuestionAdjectivesOne"
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"QuestionAdjectivesOne":{
+					"Text":"Yes",
+					"Do":"jump QuestionAdjectivesOne"
+				},
+				"Adjectives":{
+					"Text":"No",
+					"Do":"jump Adjectives"
+				}
+				
+			}
+		}
+		
 	],
 	"QuestionAdjectivesOne":[
 		"Now for question #1",
@@ -555,8 +622,20 @@ var script = {
 		"henrik Example: <b>cheap</b> - <b>cheaper</b> (comparative) - <b>cheapest</b>(superlative)",
 		"henrik For two-syllable adjectives ending in 'y' (e.g. <b>happy</b>), the 'y' becomes 'i' and <i>'er'</i> is added to form the comparative and <i>'est'</i> is added to form the superlative. So <b>happy</b> becomes <b>happier</b> (comparative) and <b>happiest</b> (superlative).",
 		"henrik For adjectives with two-syllable or more without 'y' at the end (e.g exciting), the format <b>'more + adjective'</b> is followed to form the comparative and <b>'most + adjective'</b> to form the superlative. So <b>exciting</b> becomes <b>more exciting</b> (comparative) and <b>most exciting</b> (superlative).",
-		"henrik Now let's see what you've learned!",
-		"jump Q1CSAdjectives"
+		{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"Q1CSAdjectives":{
+					"Text":"Yes",
+					"Do":"jump Q1CSAdjectives"
+				},
+				"CSAdjectives":{
+					"Text":"No",
+					"Do":"jump CSAdjectives"
+				}
+				
+			}
+		}
 	],
 	"Q1CSAdjectives":[
 		"Now for Question #1",
@@ -649,8 +728,20 @@ var script = {
         "henrik For example: She walked <i>calmly</i> towards me. Calmly is an adverb used to modify the word <i>walked</i>, and answering the question: <i>in what way?</i>",
         "henrik However, there are also many adverbs that <b>do not</b> require an <i>-ly</i> ending.",
         "henrik For example: I went to the store today. The word '<i>today</i>' is an adverb which modifies the word <i>went</i>, and answers the question: <i>when?</i>",
-        "henrik Now let's see what you're learned!",
-        "jump Q1Adverbs"
+        	{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"Q1Adverbs":{
+					"Text":"Yes",
+					"Do":"jump Q1Adverbs"
+				},
+				"Adverbs":{
+					"Text":"No",
+					"Do":"jump Adverbs"
+				}
+				
+			}
+		}
     ],
     "Q1Adverbs":[
         "Now for Question #1",
@@ -742,8 +833,20 @@ var script = {
         "henrik To talk about schedules: The library <b>opens</b> at eight. It <b>doesn't open at 7.</b>",
         "henrik To talk about your daily habits: Sara <b>eats</b> a slice of cheese for breakfast every day. She <b>doesn't</b> eat cereal.",
         "henrik To give facts: The earth <b>circles</b> the sun. The moon <b>doesn't circle</b> the sun.",
-        "henrik Now let's see what you've learned!",
-        "jump Q1STense"
+        	{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"Q1STense":{
+					"Text":"Yes",
+					"Do":"jump Q1STense"
+				},
+				"SimpleTense":{
+					"Text":"No",
+					"Do":"jump SimpleTense"
+				}
+				
+			}
+		}
     ],
     "Q1STense":[
         "Now for Question #1",
@@ -836,8 +939,20 @@ var script = {
         "henrik Example #2: What <b>are you doing</b> right now? You are <b>learning</b> English.",
         "henrik Can also be used when an action has started but hasn't finished yet.",
         "henrik Example #3: I <b>am reading</b> a book; it's a nice book.",
-        "henrik Now let's see what you've learned!",
-        "jump Q1PresProgTense"
+       	{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"Q1PresProgTense":{
+					"Text":"Yes",
+					"Do":"jump Q1CSAdjectives"
+				},
+				"PresProgTense":{
+					"Text":"No",
+					"Do":"jump PresProgTense"
+				}
+				
+			}
+		}
     ],
     "Q1PresProgTense":[
         "Now for Question #1",
@@ -933,8 +1048,20 @@ var script = {
         "henrik Example #2: I <i>have been working</i> all afternoon.",
         "henrik Emphasis on the duration or course of an action.",
         "henrik Example #3: She <i>has been writing</i> for two hours.",
-        "henrik Now let's see what you've learned!",
-        "jump Q1PresPerfProgTense"
+        	{
+			"Choice":{
+				"Dialog":"sachi Are you ready?",
+				"Q1PresPerfProgTense":{
+					"Text":"Yes",
+					"Do":"jump Q1PresPerfProgTense"
+				},
+				"PresPerfProgTense":{
+					"Text":"No",
+					"Do":"jump PresPerfProgTense"
+				}
+				
+			}
+		}
     ],
     "Q1PresPerfProgTense":[
         "Now for Question #1",
