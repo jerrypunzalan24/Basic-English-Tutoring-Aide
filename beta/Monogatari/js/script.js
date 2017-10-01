@@ -636,10 +636,10 @@ var script = {
 		}
 	],
 	"CSAdjectives":[
-		"henrik We use comparatives to compare two things or two people.",
+		"henrik We use comparative adjectives to compare two things or two people.",
 		"henrik Example: She is <i>taller</i> than her husband.",
-		"henrik Superlatives are used to compare or show the difference between more than two things or more than two people.",
-		"henrik To form comparatives or superlatives you need to know the number of syllables in the adjectives.",
+		"henrik Superlative adjectives are used to compare or show the difference between more than two things or more than two people.",
+		"henrik To form comparative or superlative adjectives you need to know the number of syllables in the adjectives.",
 		"henrik For one-syllable adjectives ending in a silent 'e' (e.g. <b>nice</b>), you need to add an <i>'r'</i> to form its comparative and <i>'st'</i> to form its superlative. So <b>nice</b> becomes <b>nicer</b> and <b>nicest</b> respectively.",
 		"henrik For one-syllable adjectives ending in one vowel and one consonant (e.g. <b>big</b>), the consonant is doubled and <i>'er'</i> is added to form its comparative and the consonant is double and <i>'est'</i> is added to form its superlative. So <b>big</b> becomes <b>bigger</b> and <b>biggest</b> respectively.",
 		"henrik For one-syllable adjectives ending in more than one consonant or more than a vowel, <i>'er'</i> is added to form the comparative and <i>'est'</i> is added to form the superlative.",
@@ -649,7 +649,7 @@ var script = {
 		"henrik For adjectives with two-syllable or more without 'y' at the end (e.g exciting), the format <b>'more + adjective'</b> is followed to form the comparative and <b>'most + adjective'</b> to form the superlative. So <b>exciting</b> becomes <b>more exciting</b> (comparative) and <b>most exciting</b> (superlative).",
 		{
 			"Choice":{
-				"Dialog":"sachi Are you ready?",
+				"Dialog":"henrik Are you ready?",
 				"Q1CSAdjectives":{
 					"Text":"Yes",
 					"Do":"jump Q1CSAdjectives"
@@ -773,7 +773,7 @@ var script = {
         "change Q2Adverbs",
         {
             "Choice":{
-                "Dialog": "What does the <b>extremely</b> modify: My grandfather walks extremely slowly.",
+                "Dialog": "What does the adverb <b>extremely</b> modify: My grandfather walks extremely slowly.",
                 "Incorrect":{
                     "Text": "Walks",
                     "Do": "jump Incorrect"
@@ -794,7 +794,7 @@ var script = {
         "change Q3Adverbs",
         {
             "Choice":{
-                "Dialog": "What does the <b>quite</b> modify: Your roommate drives quite fast, doesn't he?",
+                "Dialog": "What does the adverb <b>quite</b> modify: Your roommate drives quite fast, doesn't he?",
                 "Correct":{
                     "Text": "Fast",
                     "Do": "jump Correct"
@@ -815,7 +815,7 @@ var script = {
         "change Q4Adverbs",
         {
             "Choice":{
-                "Dialog": "What does the <b>rarely</b> modify: We rarely go to the movies on the weekends.",
+                "Dialog": "What does the adverb <b>rarely</b> modify: We rarely go to the movies on the weekends.",
                 "Correct":{
                     "Text": "Go",
                     "Do": "jump Correct"
@@ -836,7 +836,7 @@ var script = {
         "change Complete",
         {
             "Choice":{
-                "Dialog": "What does the <b>well</b> modify: My niece reads well for a five-year old.",
+                "Dialog": "What does the adverb <b>well</b> modify: My niece reads well for a five-year old.",
                 "Incorrect":{
                     "Text": "Niece",
                     "Do": "jump Incorrect"
