@@ -23,7 +23,7 @@ var particles = {
 
 // Define the music used in the game.
 var music = {
-
+	"bg-music": "audio.m4a"
 }
 
 // Define the voice files used in the game.
@@ -78,7 +78,7 @@ var script = {
 	// The game starts here.
 
 	"Start": [
-
+		"play music bg-music loop",
 		"scene classroom",
 		"show sachi Happy center with fadeIn",
 		"notify Welcome",
@@ -604,6 +604,7 @@ var script = {
 	// End Adjectives Questions
 	// Start Henrik's Supermarket
 	"Start1":[
+		"play music bg-music loop",
 		"scene supermarket",
 		"show henrik Normal center with fadeIn",
 		"notify Welcome",
