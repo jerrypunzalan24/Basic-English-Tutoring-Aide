@@ -10,10 +10,10 @@ if($_SESSION['admin']){
 	if(mysqli_num_rows($fetch_user_lessons) != 0){
 		$overrallScore = 140;
 		$currentScore = 0;
-		$rowcount = 2;
+		$rowcount = 3;
 		
 		$e = new PHPExcel();
-		$e->setActiveSheetIndex(0)->setCellValue('A1','Lessons')->setCellValue('B1','Score')->setCellValue('C1','Game Type');
+		$e->setActiveSheetIndex(0)->setCellValue('A1', 'Student Name')->setCellValue('B1', "{$_SESSION['fname']} {$_SESSION['lname']}")->setCellValue('A2','Lessons')->setCellValue('B2','Score')->setCellValue('C2','Game Type');
 		while($row = mysqli_fetch_assoc($fetch_user_lessons)){
 			$currentScore += $row['score'];
 			$e->setActiveSheetIndex(0)->setCellValue("A{$rowcount}",$row['lesson_name'])->setCellValue("B{$rowcount}", $row['score'])->setCellValue("C{$rowcount}",$row['game_type']);

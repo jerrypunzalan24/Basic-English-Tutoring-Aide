@@ -730,7 +730,7 @@ var script = {
         "henrik For example: I went to the store today. The word '<i>today</i>' is an adverb which modifies the word <i>went</i>, and answers the question: <i>when?</i>",
         	{
 			"Choice":{
-				"Dialog":"sachi Are you ready?",
+				"Dialog":"henrik Are you ready?",
 				"Q1Adverbs":{
 					"Text":"Yes",
 					"Do":"jump Q1Adverbs"
@@ -835,7 +835,7 @@ var script = {
         "henrik To give facts: The earth <b>circles</b> the sun. The moon <b>doesn't circle</b> the sun.",
         	{
 			"Choice":{
-				"Dialog":"sachi Are you ready?",
+				"Dialog":"henrik Are you ready?",
 				"Q1STense":{
 					"Text":"Yes",
 					"Do":"jump Q1STense"
@@ -941,7 +941,7 @@ var script = {
         "henrik Example #3: I <b>am reading</b> a book; it's a nice book.",
        	{
 			"Choice":{
-				"Dialog":"sachi Are you ready?",
+				"Dialog":"henrik Are you ready?",
 				"Q1PresProgTense":{
 					"Text":"Yes",
 					"Do":"jump Q1CSAdjectives"
@@ -1050,7 +1050,7 @@ var script = {
         "henrik Example #3: She <i>has been writing</i> for two hours.",
         	{
 			"Choice":{
-				"Dialog":"sachi Are you ready?",
+				"Dialog":"henrik Are you ready?",
 				"Q1PresPerfProgTense":{
 					"Text":"Yes",
 					"Do":"jump Q1PresPerfProgTense"
