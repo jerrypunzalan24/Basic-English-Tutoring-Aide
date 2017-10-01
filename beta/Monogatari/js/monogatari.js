@@ -1446,6 +1446,14 @@ $_ready(function() {
 								lessonId = 6;
 							if(parts[1] == "Adjectives")
 								lessonId = 7;
+							if(parts[1] == "CSAdjectives")
+								lessonId = 8;
+							if(parts[1] == 'Adverbs')
+								lessonId = 9;
+							if(parts[1] == 'SimpleTense')
+								lessonId = 10;
+							if(parts[1] == 'PresPerfProgTense')
+								lessonId = 11;
 //							if(lessonId != 0)
 //								score = 0;
 							analyseStatement(label[engine["Step"]]);

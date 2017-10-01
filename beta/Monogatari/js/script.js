@@ -250,7 +250,25 @@ var script = {
 		 }
 		}
 	]
-	,//missing yung two
+	,
+	"QuestionPronounsTwo":[
+		"Now for question #2",
+		"change QuestionPronounsThree",
+		{"Choice":
+			{
+				"Dialog": "sachi What is the pronoun in the sentence: On saturday, I will meet Joe at three o'clock.",
+				"Correct":{
+					"Text":"I",
+					"Do":"jump Correct"
+				},
+				"Incorrect":{
+					"Text":"Joe",
+					"Do":"jump Incorrect"
+				}
+			}
+		}
+		
+	],
 	"QuestionPronounsThree":[
 		"Now for question #3",
 		"change QuestionPronounsFour",
