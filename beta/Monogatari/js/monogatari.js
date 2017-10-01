@@ -1244,8 +1244,8 @@ $_ready(function() {
 							next();
 							break;
 						case "change":
-							game["Correct"][3] = "jump " + parts[1];
-							game["Incorrect"][2] = "jump " + parts[1];
+							game["Correct"][4] = "jump " + parts[1];
+							game["Incorrect"][3] = "jump " + parts[1];
 							next();
 							break;
 						case "add_score":

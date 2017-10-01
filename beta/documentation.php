@@ -51,9 +51,9 @@ include_once('sidepanel.php');
 					<h3 class ='header'><b>Acknowledgement</b></h3>
 					<hr/>
 					<div class ='content'>
-						<p style = 'text-align:justify'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special thanks to Mr. Braile Magcalas for letting me use his music for my game. You can check his soundcloud account right here. <a href = 'https://soundcloud.com/seven-shrimps'>https://soundcloud.com/seven-shrimps</a> and <a href = 'https://soundcloud.com/brailemcwaine/tracks'>https://soundcloud.com/brailemcwaine/tracks</a></p>
+						<p style = 'text-align:justify'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special thanks to Mr. Braile Magcalas for letting me use his music for our game. You can check his soundcloud account right here. <a href = 'https://soundcloud.com/seven-shrimps'>https://soundcloud.com/seven-shrimps</a> and <a href = 'https://soundcloud.com/brailemcwaine/tracks'>https://soundcloud.com/brailemcwaine/tracks</a></p>
 						</p>
-					<p>And also for Sonya's artwork for henrik: <a href = 'http://cloudnovel.net/Sonya'>http://cloudnovel.net/Sonya</a></p>
+					<p>And also Sonya's artwork for henrik: <a href = 'http://cloudnovel.net/Sonya'>http://cloudnovel.net/Sonya</a></p>
 				</div>
 
 			</div>

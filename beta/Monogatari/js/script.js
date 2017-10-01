@@ -33,7 +33,8 @@ var voice = {
 
 // Define the sounds used in the game.
 var sound = {
-
+	"correct": "sectionpass.mp3",
+	"incorrect": "sectionfail.mp3"
 }
 
 // Define the videos used in the game.
@@ -566,14 +567,20 @@ var script = {
 		}
 	],
 	"Incorrect":[
+		
 		"show "+character+" Normal right",
+		"play sound incorrect",
 		"Incorrect",
+		
 		"jump"
 	],
 	"Correct":[
+	
 		"add_score",
 		"show "+character+" Happy right",
+		"play sound correct",
 		"Correct!",
+		
 		"jump"
 	],
 	// End Adjectives Questions
