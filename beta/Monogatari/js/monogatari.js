@@ -1680,7 +1680,6 @@ $_ready(function() {
 							break;
 										 }
 					break;
-
 				case "function":
 					assertAsync(statement).then(function () {
 						block = false;
@@ -1690,7 +1689,6 @@ $_ready(function() {
 						block = false;
 					});
 					break;
-
 				case "object":
 					if (statement["Choice"] != null) {
 						$_("[data-ui='choices']").html("");

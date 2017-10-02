@@ -94,6 +94,9 @@ if(!$_SESSION['login']){
 	engine.Label = "<?php echo $_GET['gameType']; ?>";
 	var userId = <?php echo $_SESSION['id']; ?>;
 	var character = "<?php echo ($_GET['gameType'] == 'Start') ? "sachi" : "henrik"; ?>";
+	var charVoice = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_congrats" : "play voice henrik_congrats";?>";
+	var correct = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_correct" : "play voice henrik_correct";?>";
+	var incorrect = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_incorrect" : "play voice henrik_incorrect"; ?>"
 	</script>
 	<script src="js/script.js">
 	</script>
