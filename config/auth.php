@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'accounts',
         ],
 
         'api' => [
@@ -64,16 +64,17 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\User::class,
-        ],
-
+   'providers' => [
         // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
+        //     'driver' => 'eloquent',
+        //     'model' => App\User::class,
+        //     'provider' =>''
         // ],
+
+        'users' => [
+            'driver' => 'softeng',
+            'table' => 'account',
+        ],
     ],
 
     /*
@@ -93,7 +94,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'accounts',
             'table' => 'password_resets',
             'expire' => 60,
         ],

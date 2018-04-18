@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<div class ='col-md-6' style ='padding-left:0' >
-			<form method = 'POST' id = 'submit-form' action = '/auth' data-toggle = 'validator' role = 'form'>
+			<form method = 'POST' id = 'submit-form'  data-toggle = 'validator' role = 'form'>
 				@csrf
 				<div class = 'card' style = 'height:100%'>
 					<div class = 'header ' style = 'padding:50px' align = 'center'>
