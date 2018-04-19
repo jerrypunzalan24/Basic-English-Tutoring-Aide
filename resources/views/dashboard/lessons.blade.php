@@ -1,32 +1,10 @@
 <!doctype html>
-<?php
-session_start();
-include_once('connectDB.php');
-
-if(!isset($_SESSION['login'])){
-	$_SESSION['error'] = '<b>Error</b> - Please login to continue';
-	header("Location: login.php");
-}
-$title = 'Lesson';
-$color= 'orange';
-$active = array_fill(0,8,''); $active[3]='active';
-include_once('sidepanel.php');
-if(isset($_SESSION['error']))
-{
-	showNotif("alert-danger", $_SESSION['error']);
-	unset($_SESSION['error']);
-}
-if(isset($_SESSION['success']))
-{
-	showNotif("alert-success", $_SESSION['success']);
-	unset($_SESSION['success']);
-}
-?>
-<?php if($_SESSION['admin']){ ?>
+@include("dashboard.layouts.sidepanel")
+@if(Session::get("role"))
 <link href = '//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css' rel ='stylesheet'/>
 <link href = 'https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css' rel = 'stylesheet'/>
 <link href ='https://cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css' rel = 'stylesheet'/>
-<?php }?>
+@endif
 <div class="content">
 	<div class="container-fluid">
 		<div class="row">
@@ -36,98 +14,68 @@ if(isset($_SESSION['success']))
 						<h4 class="title">Course Outline</h4>
 						<p class ='category'>Lessons that will teach you in-game</p>
 					</div>
-					<div class="content table-responsive table-full-width" <?php if($_SESSION['admin']) { echo "style ='padding-left:50px'"; }?>>
-						<?php
-						function showModal($message, $idName, $location){
-							echo "<div class=\"modal\" id=\"{$idName}\" tabindex=\"1\" role=\"dialog\">";
-							echo "<div class=\"modal-dialog\">";
-							//<!-- Modal content-->
-							echo "<div class=\"modal-content\" id=\"{$idName}\">";
-							echo "<div class=\"modal-header\">";
-							echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>";
-							echo "<h4 class=\"modal-title\">Confirm Delete</h4>";
-							echo "</div>";
+					<div class="content table-responsive table-full-width" @if(Session::get("role")) style ='padding-left:50px' @endif>
+						<div class="modal" id="deleteModal" tabindex="1" role="dialog">";
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Confirm Delete</h4>
+									</div>
+									<div class="modal-body">
+									</div>
+									<div class="modal-footer">
+										<form method = 'POST' action ='{$location}'>
+											<input type = 'submit' name = 'submit' value ='Yes'class="btn btn-danger"/>
+										</form>
+										<a href="#" data-dismiss="modal" class="btn btn-info" onclick="$("#{$idName}").modal("hide");">No</a>
+									</div>
+								</div>
 
-							echo "<div class=\"modal-body\">";
-							echo $message;
-							echo "</div>";
-
-							echo "<div class=\"modal-footer\">";
-							echo "<form method = 'POST' action ='{$location}'>";
-							echo "<input type = 'submit' name = 'submit' value ='Yes'class=\"btn btn-danger\"/>
-                                              </form>";
-							echo "<a href=\"#\" data-dismiss=\"modal\" class=\"btn btn-info\" onclick=\"$(\"#{$idName}\").modal(\"hide\");\">No</a>";
-							echo "</div>";
-							echo "</div>";
-
-							echo "</div>";
-							echo "</div>";
-						}
-						?>
-						<?php if($_SESSION['admin']){?>
+							</div>
+						</div>
+						@if(Session::get("role"))
 						<a href='add_lesson.php' class='btn btn-info btn-fill pull-right'>Add Lesson</a>
-						<?php } ?>
-						<?php if($_SESSION['admin']){
-	echo "<table class=\"table-hover table-striped ui celled table\" id = 'lessonTable'>";
-}
-						else{ echo "<table class=\"table table-hover table-striped\">";}?>
-
-						<thead>
-							<th>Lesson Number</th>
-							<th>Name</th>
-							<?php if(!$_SESSION['admin']){?>
-							<?php }?>
-							<th>Game Type</th>
-							<?php 
-							if($_SESSION['admin']){
-							?>
-							<th>Action</th>
-							<?php
-							}
-							?>
-						</thead>
-						<tbody>
-							<?php
-							$query = mysqli_query($con, "SELECT * FROM lessons");
-							while ($row = mysqli_fetch_array($query))
-							{
-								echo '<tr>';
-								if(!$_SESSION['admin']){
-									$userScore = 0;
-									echo '<td>' . $row['lesson_no'] . '</td>';
-									echo "<td><a style = 'text-decoration:none; color: #131313;'href ='https://en.wikipedia.org/wiki/Special:Search?search={$row['lesson_name']}' >{$row['lesson_name']}</a></td>";
-								
-									echo '<td>' . $row['game_type'] . '</td>';
-								}
-								else{
-									$edit = "edit_lesson.php?id=".$row['id'];
-									$delete = "delete_lesson.php?id=".$row['id'];
-									echo "<td>{$row['lesson_no']}</td>";
-									echo "<td>{$row['lesson_name']}</td>";
-									echo "<td>{$row['game_type']}</td>";
-									echo "<td><button class ='btn btn-primary btn-fill' onclick = \"window.location.href='{$edit}'\">
-                                                <span class ='glyphicon glyphicon-wrench'></span>
-                                                Edit
-                                                </button>&nbsp&nbsp&nbsp
-                                                <a href=\"#\" class ='btn btn-danger btn-fill' onclick=\"$('#dialog_{$row['id']}').modal('show');\" role=\"button\" class=\"btn-show-modal\" title=\"Delete?\">
-                                                <span class ='glyphicon glyphicon-remove'></span>Delete</a></td>";
-									showModal("<p>Are you sure you want to delete this record?</p>", "dialog_{$row['id']}", $delete);
-
-								}
-								echo '</tr>';
-							}
-
-
-							?>
-						</tbody>
-						</table>
-
+						@endif
+						@if(Session::get("role"))
+						<table class="table-hover table-striped ui celled table" id = 'lessonTable'>
+							@else 
+							<table class="table table-hover table-striped">
+								@endif
+								<thead>
+									<th>Lesson Number</th>
+									<th>Name</th>
+									<th>Game Type</th>
+									@if(Session::get("role"))
+									<th>Action</th>
+									@endif
+								</thead>
+								<tbody>
+									@foreach($results as $result)
+									<tr>
+										@if(!Session::get("role"))
+										<td>{{$result->lesson_no}}</td>
+										<td><a style = 'text-decoration:none; color: #131313;' href ='https://en.wikipedia.org/wiki/Special:Search?search={{$result->lesson_name}}' >{{$result->lesson_name}}</a></td>
+										<td>{{$result->game_type}}</td>
+										@else
+										<td>{{$result->lesson_no}}</td>
+										<td>{{$result->lesson_name}}</td>
+										<td>{{$result->game_type}}</td>
+										<td><button class ='btn btn-primary btn-fill' onclick = "window.location.href='edit_lesson/{{$result->id}}'">
+											<span class ='glyphicon glyphicon-wrench'></span>
+											Edit
+										</button>&nbsp&nbsp&nbsp
+										<a href="#" class ='btn btn-danger btn-fill' role="button" class="btn-show-modal" title="Delete">
+											<span class ='glyphicon glyphicon-remove'></span>Delete</a></td>
+											@endif
+										</tr>
+										@endforeach
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
-	</div>
-</div>
-</div>
-
-<?php include_once('footer.php');?>
+		@include("dashboard.layouts.footer")

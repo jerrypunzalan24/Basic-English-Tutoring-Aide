@@ -1,24 +1,13 @@
 <!doctype html>
-<?php 
-session_start();
-include_once('connectDB.php');
-if(!isset($_SESSION['login'])){
-	$_SESSION['error'] = '<b>Error</b> - Please login to continue';
-	header("Location: login.php");
-}
-$title = 'Documentation';
-$color = 'blue';
-$active = array_fill(0,8,''); $active[5]='active';
-include_once('sidepanel.php');
-?>
+@include("dashboard.layouts.sidepanel")
 <style>
-	.row-eq-height{
-		display:flex;
-	}
-	.card-footer{
-		position:absolute;
-		bottom:0;
-	}
+.row-eq-height{
+	display:flex;
+}
+.card-footer{
+	position:absolute;
+	bottom:0;
+}
 </style>
 <div class="content">
 	<div class="container-fluid">
@@ -52,7 +41,7 @@ include_once('sidepanel.php');
 					<hr/>
 					<div class ='content'>
 						<p style = 'text-align:justify'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special thanks to Mr. Braile Magcalas for letting me use his music for our game. You can check his soundcloud account right here. <a href = 'https://soundcloud.com/seven-shrimps'>https://soundcloud.com/seven-shrimps</a> and <a href = 'https://soundcloud.com/brailemcwaine/tracks'>https://soundcloud.com/brailemcwaine/tracks</a></p>
-						</p>
+					</p>
 					<p>And also Sonya's artwork for henrik: <a href = 'http://cloudnovel.net/Sonya'>http://cloudnovel.net/Sonya</a></p>
 				</div>
 
@@ -64,7 +53,7 @@ include_once('sidepanel.php');
 		<div class ='col-md-6' >
 			<div class ='card' style ='height:90%'>
 				<div class="content " style ='position:relative; height:100%;'>
-					<img src="assets/img/about/alido.jpg" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
+					<img src="{{asset('assets/img/about/alido.jpg')}}" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
 					<div class ='content=heading'><h4 class="title">Denisse Joyce Alido</h4>
 						<p class ='category'>"Quote"</p>
 					</div>
@@ -92,7 +81,7 @@ include_once('sidepanel.php');
 		<div class ='col-md-6' >
 			<div class ='card' style ='height:90%'>
 				<div class="content">
-					<img src="assets/img/about/bulatao.jpg" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
+					<img src="{{asset('assets/img/about/bulatao.jpg')}}" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
 					<div class ='content-heading'><h4 class="title">Chrystyn Gabrielle Bulatao</h4>
 						<p class ='category'>"Quote"</p>
 					</div>
@@ -108,8 +97,6 @@ include_once('sidepanel.php');
 									<i class="fa fa-twitter"></i> Twitter
 									<i class="fa fa-instagram"></i> Instagram
 								</div>
-
-
 							</div>
 						</div>
 					</div>
@@ -122,7 +109,7 @@ include_once('sidepanel.php');
 		<div class ='col-md-6' >
 			<div class ='card' style ='height:90%'>
 				<div class="content" style ='position:relative; height:100%;'>
-					<img src="assets/img/about/punzalan.jpg" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
+					<img src="{{asset('assets/img/about/punzalan.jpg')}}" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
 					<div class ='content-heading'><h4 class="title">Jeremiah Punzalan</h4>
 						<p class ='category'>"Quote"</p>
 					</div>
@@ -148,32 +135,32 @@ include_once('sidepanel.php');
 		<div class ='col-md-6' >
 			<div class ='card' style ='height:90%'>
 				<div class="content"  >
-					<img src="assets/img/about/vargas.jpg" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
+					<img src="{{asset('assets/img/about/vargas.jpg')}}" class ='img-responsive img-circle pull-left' width ='200' height ='200' style ='padding:2%'>
 					<div class ='content-heading'><h4 class="title">Christian Joseph Vargas</h4>
 						<p class ='category'>"Quote"</p>
 					</div>
 					<!-- Fill up -->
 					<div class ='content'><p style ='text-align:justify'>
-						</p>
-					</div>
-					<div style ='clear:both'>
-						<div class ='content'>
-							<hr>
-							<div class="footer" >
-								<div class="legend">
-									<i class="fa fa-facebook"></i> Facebook
-									<i class="fa fa-twitter"></i> Twitter
-									<i class="fa fa-instagram"></i> Instagram
-								</div>  
-							</div>
+					</p>
+				</div>
+				<div style ='clear:both'>
+					<div class ='content'>
+						<hr>
+						<div class="footer" >
+							<div class="legend">
+								<i class="fa fa-facebook"></i> Facebook
+								<i class="fa fa-twitter"></i> Twitter
+								<i class="fa fa-instagram"></i> Instagram
+							</div>  
 						</div>
 					</div>
 				</div>
-
 			</div>
+
 		</div>
 	</div>
 </div>
 </div>
+</div>
 
-<?php include_once('footer.php');?>
+@include("dashboard.layouts.footer")

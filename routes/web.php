@@ -23,7 +23,7 @@ Route::prefix('/dashboard')->group(function(){
 	Route::get("/gameslist",'DashboardController@gameslist');
 	Route::get("/lessons",'DashboardController@lessons');
 	Route::get("/documentation", "DashboardController@documentation");
-	Route::prefix("/accounts_admin",function(){
+	Route::prefix("/accounts_admin")->group(function(){
 		Route::get("/", "DashboardController@accounts");
 		Route::get("/edit/{id}", "DashboardController@editaccount");
 		Route::get("/delete/{id}", "DashboardController@deleteaccount");

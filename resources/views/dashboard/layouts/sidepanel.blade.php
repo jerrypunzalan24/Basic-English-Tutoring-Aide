@@ -14,22 +14,22 @@ date_default_timezone_set("Asia/Manila");
 	<meta name="viewport" content="width=device-width, initial-scale=1" />    
 
 	<!-- Bootstrap core CSS     -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
 
 	<!-- Animation library for notifications   -->
-	<link href="assets/css/animate.min.css" rel="stylesheet"/>
+	<link href="{{asset('assets/css/animate.min.css') }}" rel="stylesheet"/>
 
 	<!--  Light Bootstrap Table core CSS    -->
-	<link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+	<link href="{{asset('assets/css/light-bootstrap-dashboard.css')}}" rel="stylesheet"/>
 
 
 	<!--  CSS for Demo Purpose, don't include it in your project     -->
-	<link href="assets/css/demo.css" rel="stylesheet" />
+	<link href="../assets/css/demo.css" rel="stylesheet" />
 
 	<!--     Fonts and icons     -->
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-	<link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+	<link href="{{asset('assets/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/js/jquery.mCustomScrollbar.css">
 	<style>
 	.mCSB_inside > .mCSB_container{ margin-right: 10px; }
@@ -42,7 +42,7 @@ date_default_timezone_set("Asia/Manila");
 
 
 	<div class="wrapper">
-		<div class="sidebar" data-color="sred" data-image="assets/img/school-supplies-wallpaper-33.jpg">
+		<div class="sidebar" data-color="sred" data-image="{{asset('assets/img/school-supplies-wallpaper-33.jpg')}}">
 
 		    <!--
 
@@ -58,41 +58,41 @@ Tip 2: you can also add an image using data-image tag
 			<img src = 'data:image/jpeg;base64,{{Session::get("image")}}' class ='img-circle' width ='125' height = '125' >
 			
 			@else
-			<img src = 'assets/img/faces/Avatar03-512.png' class ='img-circle' width ='100' height = '100'/>
+			<img src = '{{asset('assets/img/faces/Avatar03-512.png')}}' class ='img-circle' width ='100' height = '100'/>
 			@endif
 		</div>
-		<a class ='simple-text' href = 'profile.php'>{{ Session::get("username")}}</a>
+		<a class ='simple-text' href = 'profile'>{{ Session::get("username")}}</a>
 	</div>
 
 	<ul class="nav">
 		<li class = ''>
-			<a href="index.php">
+			<a href="/dashboard">
 				<i class="pe-7s-home"></i>
 				<p>Home</p>
 			</a>
 		</li>
 		@if(!Session::get("role"))
 		<li class = ''>
-			<a href="profile.php">
+			<a href="/dashboard/profile/">
 				<i class="pe-7s-user"></i>
 				<p>My Profile</p>
 			</a>
 		</li >
 		@endif
 		<li class = ''>
-			<a href="gameslist.php">
+			<a href="/dashboard/gameslist/">
 				<i class="pe-7s-joy"></i>
 				<p>Games List</p>
 			</a>
 		</li>
 		<li class = ''>
-			<a href="lessons.php">
+			<a href="/dashboard/lessons/">
 				<i class="pe-7s-news-paper"></i>
 				<p>Course Outline</p>
 			</a>
 		</li>
 		<li class = 's'> 
-			<a href="documentation.php">
+			<a href="/dashboard/documentation/">
 				<i class="pe-7s-folder"></i>
 				<p>Documentation</p>
 			</a>
@@ -103,7 +103,7 @@ Tip 2: you can also add an image using data-image tag
 		@if(Session::get("role")) 
 
 		<li class = ''>
-			<a href="accounts_admin.php">
+			<a href="/dashboard/accounts_admin">
 				<i class="pe-7s-note2"></i>
 				<p>Accounts Overview</p>
 			</a>
