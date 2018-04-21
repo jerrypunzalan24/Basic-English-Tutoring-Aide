@@ -31,9 +31,10 @@
           <div class="content">
             <div>
               @if(Session::get('role')) 
-              <form method = 'post' action ='updateContent.php'>
+              <form method = 'post' >
+                @csrf
                 <div class = 'form-group'>
-                  <textarea name = 'contentOne' class ='form-control' rows = '20' cols ='20'></textarea>
+                  <textarea name = 'contentOne' class ='form-control' rows = '20' cols ='20'>{!!$contents[0]->description!!}</textarea>
                 </div>
                 <div class ='form-group'>
                   <input type = 'submit' class ='btn btn-primary btn-fill' name = 'submitOne' value ='Update'/>
@@ -63,9 +64,10 @@
           </div>
           <div class="content">
             @if(Session::get("role"))
-            <form method = 'post' action ='updateContent.php'>
+            <form method = 'post' >
+              @csrf
               <div class ='form-group'>
-                <textarea name = 'contentTwo' class ='form-control' rows = '20' cols ='20'></textarea>
+                <textarea name = 'contentTwo' class ='form-control' rows = '20' cols ='20'>{!!$contents[1]->description!!}</textarea>
               </div>
               <div class ='form-group'>
                 <input type = 'submit' class ='btn btn-primary btn-fill' name = 'submitTwo' value ='Update'/>

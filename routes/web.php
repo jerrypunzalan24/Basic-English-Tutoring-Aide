@@ -20,13 +20,19 @@ Route::get('/forgotpass','ForgotpassController@index');
 Route::post('/forgotpass','ForgotpassController@change');
 Route::prefix('/dashboard')->group(function(){
 	Route::get("/", 'DashboardController@index');
-	Route::get("/gameslist",'DashboardController@gameslist');
-	Route::get("/lessons",'DashboardController@lessons');
+	Route::post('/','DashboardController@updatecontent');
+	Route::get("/gameslist", "DashboardController@gameslist");
+	Route::prefix("/lessons")->group(function(){
+		Route::get("/", "DashboardController@lessons");
+		Route::any("/add","LessonsController@add");
+		Route::any("/edit/{id}","LessonsController@edit")->where(['id'=>'[0-9]+']);
+		Route::post("/delete/{id}","LessonsController@delete")->where(['id'=>'[0-9]+']);
+	});
 	Route::get("/documentation", "DashboardController@documentation");
 	Route::prefix("/accounts_admin")->group(function(){
 		Route::get("/", "DashboardController@accounts");
-		Route::get("/edit/{id}", "DashboardController@editaccount");
-		Route::get("/delete/{id}", "DashboardController@deleteaccount");
+		Route::any("/edit/{id}", "AccountsController@edit")->where(['id'=>'[0-9]+']);
+		Route::post("/delete/{id}", "AccountsController@delete")->where(['id'=>'[0-9]+']);
 	});
 });	
 Auth::routes();
