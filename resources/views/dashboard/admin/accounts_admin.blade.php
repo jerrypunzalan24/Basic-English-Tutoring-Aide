@@ -25,6 +25,12 @@ table.dataTable.no-footer{
             <h4 class="title">User Accounts</h4>
           </div>
           <div class="content table-responsive">
+            @if(session('success')!==null)
+            <div class="alert alert-success alert-dismissible" style ='width:70%;margin:auto;'>
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Success!</strong> - {!!session('success')!!}
+            </div>
+            @endif
             <div class="modal" id="deleteModal" tabindex="1" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content" id="deleteModal">
@@ -33,18 +39,21 @@ table.dataTable.no-footer{
                     <h4 class="modal-title">Confirm Delete</h4>
                   </div>
                   <div class="modal-body">
+                    Are you sure?
                   </div>
                   <div class="modal-footer">
-                    <form method = 'POST' action ='{$location}'>
-                      <input type = 'submit' name = 'submit' value ='Yes'class="btn btn-danger"/>
+                    <form method = 'POST' action ='accounts_admin/delete'>
+                      @csrf
+                      <input type ='hidden' name ='id' value =''/>
+                      <input type = 'submit' name = 'submit' value ='Yes' class="btn btn-danger"/>
+                      <a href="#" data-dismiss="modal" class="btn btn-info" >No</a>
                     </form>
-                    <a href="#" data-dismiss="modal" class="btn btn-info" onclick="$("#{$idName}").modal("hide");">No</a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <a href='add.php' class='btn btn-info btn-fill pull-right'>Add Account</a>
+            <a href='accounts_admin/add' class='btn btn-info btn-fill pull-right'>Add Account</a>
             <table id="table1" class="table-hover table-striped ui celled table" align ="center">
               <thead>
                 <th>ID</th>
@@ -69,11 +78,11 @@ table.dataTable.no-footer{
               <td> {{$result->fname}} </td>
               <td> {{$result->lname}} </td>
               <td style ='padding:0px'>
-                <button class ='btn btn-primary btn-fill' >
+                <a class ='btn btn-primary btn-fill' href ='accounts_admin/edit/{{$result->id}}'>
                   <span class ='glyphicon glyphicon-wrench'></span>
                   Edit
-                </button>&nbsp;
-                <a href="#" class ='btn btn-danger btn-fill' role="button" class="btn-show-modal" title="Delete?">
+                </a>&nbsp;
+                <a href="#" class ='btn btn-danger btn-fill' role="button" class="btn-show-modal" onclick ="$('#deleteModal').modal('show'); $('input[name=id]').val({{$result->id}})"title="Delete?">
                   <span class ='glyphicon glyphicon-remove'></span>Delete</a>
                   &nbsp;
                   <button  class ='btn btn-primary btn-fill'  style ='background-color: #009700; border-color: #009700' ><span class ='glyphicon glyphicon-file'></span>Report

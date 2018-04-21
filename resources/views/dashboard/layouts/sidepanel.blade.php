@@ -55,7 +55,7 @@ Tip 2: you can also add an image using data-image tag
 		<div class ='content' align ='center'>
 
 			@if(!empty(Session::get("image")))
-			<img src = 'data:image/jpeg;base64,{{Session::get("image")}}' class ='img-circle' width ='125' height = '125' >
+			<img src = 'data:image/jpeg;base64,{{base64_encode(Session::get("image"))}}' class ='img-circle' width ='125' height = '125' >
 			
 			@else
 			<img src = '{{asset('assets/img/faces/Avatar03-512.png')}}' class ='img-circle' width ='100' height = '100'/>

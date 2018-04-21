@@ -31,8 +31,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'authuser'], function(){
   Route::get("/documentation", "DashboardController@documentation")->middleware('authuser');
   Route::group(['prefix'=> '/accounts_admin','middleware' => 'adminonly'], function(){
     Route::get("/", "DashboardController@accounts");
+    Route::any("/add", "AccountsController@add");
     Route::any("/edit/{id}", "AccountsController@edit")->where(['id'=>'[0-9]+']);
-    Route::post("/delete/{id}", "AccountsController@delete")->where(['id'=>'[0-9]+']);
+    Route::post("/delete", "AccountsController@delete");
   });
 }); 
 Auth::routes();
