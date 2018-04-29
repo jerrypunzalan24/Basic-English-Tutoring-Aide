@@ -592,7 +592,7 @@ $_ready(function() {
 			if (typeof scenes == 'object') {
 				assetCount += Object.keys(scenes).length;
 				for (var i in scenes) {
-					preloadPromises.push(preloadImage("img/scenes/" + scenes[i]));
+					preloadPromises.push(preloadImage("/monogatari-assets/img/scenes/" + scenes[i]));
 				}
 			}
 
@@ -606,14 +606,14 @@ $_ready(function() {
 					if (typeof characters[i]["Images"] != 'undefined') {
 						assetCount += Object.keys(characters[i]["Images"]).length;
 						for(var j in characters[i]["Images"]){
-							preloadPromises.push(preloadImage("img/characters/" + directory + characters[i]["Images"][j]));
+							preloadPromises.push(preloadImage("/monogatari-assets/img/characters/" + directory + characters[i]["Images"][j]));
 						}
 					}
 
 					if (typeof characters[i]["Side"] != 'undefined') {
 						assetCount += Object.keys(characters[i]["Side"]).length;
 						for(var k in characters[i]["Side"]){
-							preloadPromises.push(preloadImage("img/characters/" + directory + characters[i]["Side"][k]));
+							preloadPromises.push(preloadImage("/monogatari-assets/img/characters/" + directory + characters[i]["Side"][k]));
 						}
 					}
 				}
@@ -622,7 +622,7 @@ $_ready(function() {
 			if (typeof images == 'object') {
 				assetCount += Object.keys(images).length;
 				for (var i in images) {
-					preloadPromises.push(preloadImage("img/" + images[i]));
+					preloadPromises.push(preloadImage("/monogatari-assets/img/" + images[i]));
 				}
 			}
 
@@ -630,21 +630,21 @@ $_ready(function() {
 			if (typeof music == 'object') {
 				assetCount += Object.keys(music).length;
 				for (var i in music) {
-					preloadPromises.push(preloadAudio("audio/music/" + music[i]));
+					preloadPromises.push(preloadAudio("/monogatari-assets/audio/music/" + music[i]));
 				}
 			}
 
 			if (typeof voice == 'object') {
 				assetCount += Object.keys(voice).length;
 				for (var i in voice) {
-					preloadPromises.push(preloadAudio("audio/music/voice" + voice[i]));
+					preloadPromises.push(preloadAudio("/monogatari-assets/audio/voice/" + voice[i]));
 				}
 			}
 
 			if (typeof sound == 'object') {
 				assetCount += Object.keys(sound).length;
 				for (var i in sound) {
-					preloadPromises.push(preloadAudio("audio/sound/" + sound[i]));
+					preloadPromises.push(preloadAudio("/monogatari-assets/audio/sound/" + sound[i]));
 				}
 			}
 
@@ -1030,7 +1030,7 @@ $_ready(function() {
 		$_("section").hide();
 		playAmbient();
 		$_("[data-menu='main']").show();
-		window.location = "../gameslist.php";
+		window.location = "/dashboard/gameslist";
 	}
 
 	// Function to execute the next statement in the script.

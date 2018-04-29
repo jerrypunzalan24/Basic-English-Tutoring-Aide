@@ -53,10 +53,10 @@
 	<meta name="application-name" content="" /> <!-- App Title -->
 	<meta name="msapplication-tooltip" content="" /> <!--Small text on hover-->
 	<meta name="msapplication-starturl" content="http://" /> <!-- URL to start in -->
-	<meta name="msapplication-square70x70logo" content="img/icons/icon_70x70.png" /> <!--Image for Tile 70x70-->
-	<meta name="msapplication-square150x150logo" content="img/icons/icon_150x150.png" /> <!--Image for Tile 150x150-->
-	<meta name="msapplication-wide310x150logo" content="img/icons/icon_310x150.png" /> <!--Image for Tile 310x150-->
-	<meta name="msapplication-square310x310logo" content="img/icons/icon_310x310.png" /> <!--Image for Tile 310x310-->
+	<meta name="msapplication-square70x70logo" content="monogatari-assets/img/icons/icon_70x70.png" /> <!--Image for Tile 70x70-->
+	<meta name="msapplication-square150x150logo" content="monogatari-assets/img/icons/icon_150x150.png" /> <!--Image for Tile 150x150-->
+	<meta name="msapplication-wide310x150logo" content="monogatari-assets/img/icons/icon_310x150.png" /> <!--Image for Tile 310x150-->
+	<meta name="msapplication-square310x310logo" content="monogatari-assets/img/icons/icon_310x310.png" /> <!--Image for Tile 310x310-->
 
 	<link rel="publisher" href=""> <!--Publisher's Google+ URL-->
 
@@ -67,36 +67,36 @@
 
 	<link rel="manifest" href="manifest.json">
 
-	<link rel="stylesheet" href="style/normalize.min.css">
-	<link rel="stylesheet" href="style/animate.min.css">
-	<link rel="stylesheet" href="style/csshake.min.css">
-	<link rel="stylesheet" href="style/font-awesome.min.css">
-	<link rel="stylesheet" href="style/monogatari.css">
-	<link rel="stylesheet" href="style/main.css">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/normalize.min.css')}}">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/animate.min.css')}}">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/csshake.min.css')}}">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/monogatari.css')}}">
+	<link rel="stylesheet" href="{{asset('monogatari-assets/style/main.css')}}">
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/particles.min.js"></script>
-	<script src="js/artemis.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/strings.js"></script>
-	<script src="js/options.js"></script>
+	<script src="{{asset('monogatari-assets/js/jquery.min.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/particles.min.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/artemis.min.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/plugins.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/strings.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/options.js')}}"></script>
 	<script type ='text/javascript'>
 	storage.player.Name = "{{ Session::get('firstname') }} ";
 	storage.player.Score = 0;
-	engine.Label = "{{gametype}}";
-	var userId = {{Session::get("id")}};
-	var character = "<?php echo ($_GET['gameType'] == 'Start') ? "sachi" : "henrik"; ?>";
-	var charVoice = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_congrats" : "play voice henrik_congrats";?>";
-	var correct = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_correct" : "play voice henrik_correct";?>";
-	var incorrect = "<?php echo ($_GET['gameType'] == 'Start') ? "play voice sachi_incorrect" : "play voice henrik_incorrect"; ?>"
+	engine.Label = "{{$gametype}}";
+	var userId = {{ Session::get("id") }};
+	var character = "{{ $gametype }}";
+	var charVoice = "{{ ($gametype == 'sachi') ? "play voice sachi_congrats" : "play voice henrik_congrats" }}";
+	var correct = "{{ ($gametype == 'sachi') ? "play voice sachi_correct" : "play voice henrik_correct" }}";
+	var incorrect = "{{ ($gametype == 'sachi') ? "play voice sachi_incorrect" : "play voice henrik_incorrect" }}";
 	</script>
-	<script src="js/script.js">
+	<script src="{{asset('monogatari-assets/js/script.js')}}">
 	</script>
 	<script type ='text/javascript'>
 	
 	</script>
-	<script src="js/monogatari.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{asset('monogatari-assets/js/monogatari.js')}}"></script>
+	<script src="{{asset('monogatari-assets/js/main.js')}}"></script>
 	<style>
 
 	</style>
@@ -174,7 +174,7 @@
 	</section>
 
 	<!-- Main Screen -->
-	<section data-menu="main" data-background="../assets/img/background-<?php echo (($_GET['gameType'] == 'Start') ? "sachi" : "henrik");?>.png">
+	<section data-menu="main" data-background="{{asset('assets/img/background-' . $gametype . '.png')}}">
 		<audio type="audio/mpeg" data-component="ambient"></audio>
 
 		<div class="vertical align-right bottom animated bounceIn " data-ui="inner-menu">

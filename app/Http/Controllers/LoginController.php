@@ -19,6 +19,7 @@ class LoginController extends Controller
         $checkuser = \DB::table('accounts')->where('username',$username)->first();
         if(count($checkuser) != 0){
           if(password_verify($password, $checkuser->password)){
+            $request->session()->put('id', $checkuser->id);
             $request->session()->put('username', $checkuser->username);
             $request->session()->put('firstname', $checkuser->fname);
             $request->session()->put('lastname', $checkuser->lname);

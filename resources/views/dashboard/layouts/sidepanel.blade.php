@@ -91,7 +91,7 @@ Tip 2: you can also add an image using data-image tag
 				<p>Course Outline</p>
 			</a>
 		</li>
-		<li class = 's'> 
+		<li class = ''> 
 			<a href="/dashboard/documentation/">
 				<i class="pe-7s-folder"></i>
 				<p>Documentation</p>
@@ -142,7 +142,7 @@ Tip 2: you can also add an image using data-image tag
 						</a>
 						<ul class="dropdown-menu">
 
-							<li><a href="edit.php?id={{ Session::get("id") }}">Edit Account</a></li>
+							<li><a href="/dashboard/editprofile/{{Session::get('id')}}">Edit Account</a></li>
 
 							<li class="divider"></li>
 							<li><a href="/logout">Logout</a></li>

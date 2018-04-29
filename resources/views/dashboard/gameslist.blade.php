@@ -19,12 +19,12 @@
             <div class = 'row'>
               <div class ='col-md-6'>
                 <div class ='content' style ='padding-right:0px'>
-                  <a href = 'Monogatari/index.php?gameType=Start'><img src ='{{asset('assets/img/vino.png')}}' style ='width:100%'/></a>
+                  <a href = 'monogatari/sachi'><img src ='{{asset('assets/img/vino.png')}}' style ='width:100%'/></a>
                 </div>
               </div>
               <div class ='col-md-6'>
                 <div class ='content' style ='padding-left:0px'>
-                  <a href = 'Monogatari/index.php?gameType=Start1'><img src ='{{asset('assets/img/henrik-supermarket.png')}}' style ='width:100%'/></a>
+                  <a href = 'monogatari/henrik'><img src ='{{asset('assets/img/henrik-supermarket.png')}}' style ='width:100%'/></a>
                 </div>
               </div>
             </div>

@@ -21,21 +21,23 @@ Route::post('/forgotpass','ForgotpassController@change');
 Route::group(['prefix' => '/dashboard', 'middleware' => 'authuser'], function(){
   Route::get("/", 'DashboardController@index');
   Route::post('/','DashboardController@updatecontent')->middleware('adminonly');
-  Route::get("/gameslist", "DashboardController@gameslist");
+  Route::group(['prefix'=>'/gameslist'], function(){
+    Route::get("/","DashboardController@gameslist");
+    Route::get('/monogatari/{game}','MonogatariController@index')->where(['game'=>'sachi|henrik']);
+  });
   Route::group(['prefix'=>'/lessons'], function(){
     Route::get("/", "DashboardController@lessons");
     Route::any("/add","LessonsController@add")->middleware('adminonly');
     Route::any("/edit/{id}","LessonsController@edit")->where(['id'=>'[0-9]+'])->middleware('adminonly');
     Route::post("/delete","LessonsController@delete")->middleware('adminonly');
   });
-  Route::get("/documentation", "DashboardController@documentation")->middleware('authuser');
+  Route::get("/documentation", "DashboardController@documentation");
   Route::group(['prefix'=> '/accounts_admin','middleware' => 'adminonly'], function(){
     Route::get("/", "DashboardController@accounts");
     Route::any("/add", "AccountsController@add");
     Route::any("/edit/{id}", "AccountsController@edit")->where(['id'=>'[0-9]+']);
     Route::post("/delete", "AccountsController@delete");
   });
-}); 
-Auth::routes();
+  Route::any('/editprofile/{id}', 'ProfileController@edit');
 
-Route::get('/home', 'HomeController@index')->name('home');
+}); 

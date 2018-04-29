@@ -26,14 +26,15 @@ class DashboardController extends Controller
     return view("dashboard.gameslist");
   }
   public function lessons(Request $request){
-    $results = \DB::select("SELECT * FROM lessons");
+    $results = \DB::select("SELECT * FROM lessons ORDER BY lesson_no ASC");
     return view("dashboard.lessons",['results'=>$results]);
   }
   public function documentation(Request $request){
     return view("dashboard.documentation");
   }
   public function accounts(Request $request){
-    $results = \DB::select("SELECT * FROM accounts");
+    $userid = $request->session()->get('id');
+    $results = \DB::select("SELECT * FROM accounts WHERE id != {$userid} ORDER BY id DESC ");
     return view('dashboard.admin.accounts_admin',['results' => $results]);
   }
 }
