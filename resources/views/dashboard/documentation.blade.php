@@ -164,3 +164,6 @@
 </div>
 
 @include("dashboard.layouts.footer")
+  <script>
+                $('.sidebar').attr('data-color','blue')
+</script>

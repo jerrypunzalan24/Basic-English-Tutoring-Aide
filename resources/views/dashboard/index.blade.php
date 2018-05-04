@@ -3,7 +3,6 @@
 <div class="content">
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -17,7 +16,6 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-
     </div>
   </div>
   <div class="container-fluid">
@@ -109,3 +107,7 @@
     </div>
 
     @include("dashboard.layouts.footer")
+    <script>
+              $('.sidebar').attr('data-color','blue')
+
+    </script>

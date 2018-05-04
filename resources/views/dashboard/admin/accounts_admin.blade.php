@@ -98,6 +98,9 @@ table.dataTable.no-footer{
   </div>
 </div>
 @include("dashboard.layouts.footer")
+  <script>
+                $('.sidebar').attr('data-color','blue')
+</script>
 <style>
 .row
 {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage"> <!--Change the lang property to your web's language-->
+<html lang="en" > <!--Change the lang property to your web's language-->
 
-<head prefix="og: http://ogp.me/ns#">
+<head >
 
 	<title></title> <!--Up to 60-70 Characters. Optimal Format: Primary Keyword - Secondary Keyword | Brand Name-->
 
@@ -34,8 +34,8 @@
 
 	<!--Android Meta Tags-->
 	<meta name="mobile-web-app-capable" content="yes">
-	<link rel="icon" sizes="192x192" href="img/icons/icon_192x192.png"> <!--192 x 192 Icon-->
-	<link rel="icon" sizes="128x128" href="img/icons/icon_128x128.png"> <!--128 x 128 Icon-->
+	<link rel="icon" sizes="192x192" href="{{asset('img/icons/icon_192x192.png')}}"> <!--192 x 192 Icon-->
+	<link rel="icon" sizes="128x128" href="{{asset('img/icons/icon_128x128.png')}}"> <!--128 x 128 Icon-->
 
 	<!--Apple Meta Tags-->
 	<meta name="apple-mobile-web-app-title" content=""> <!--App Title or Name-->
@@ -81,6 +81,8 @@
 	<script src="{{asset('monogatari-assets/js/strings.js')}}"></script>
 	<script src="{{asset('monogatari-assets/js/options.js')}}"></script>
 	<script type ='text/javascript'>
+	var hostname = $(location).attr('protocol') + "//" + $(location).attr('host') +"/"
+	console.log(hostname)
 	storage.player.Name = "{{ Session::get('firstname') }} ";
 	storage.player.Score = 0;
 	engine.Label = "{{$gametype}}";

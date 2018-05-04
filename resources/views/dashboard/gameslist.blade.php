@@ -1,5 +1,5 @@
 <!doctype html>
-@include("dashboard.layouts.sidepanel");
+@include("dashboard.layouts.sidepanel")
 <style>
 .col-md-6{
   padding:15px;
@@ -17,6 +17,7 @@
           </div>
           <div class="content">
             <div class = 'row'>
+              
               <div class ='col-md-6'>
                 <div class ='content' style ='padding-right:0px'>
                   <a href = 'monogatari/sachi'><img src ='{{asset('assets/img/vino.png')}}' style ='width:100%'/></a>
@@ -35,3 +36,6 @@
   </div>
 </div>
 @include("dashboard.layouts.footer")
+<script>
+                $('.sidebar').attr('data-color','red')
+</script>

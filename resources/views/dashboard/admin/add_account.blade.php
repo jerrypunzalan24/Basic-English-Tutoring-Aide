@@ -1,5 +1,5 @@
 @include("dashboard.layouts.sidepanel")
-<div class="content">                                
+<div class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
@@ -23,7 +23,6 @@
               @csrf
               <div class="row">
                 <div class="col-md-12">
-
                   <div class="form-group">
                     <label>Username</label>
                     <input type="text" name = "uname" pattern = '\S{6,}' data-error = "Must contain 6 characters" class="form-control" placeholder="Username" value='{{old('uname')}}' REQUIRED/>
@@ -67,10 +66,8 @@
                   </div>
                 </div>
               </div>
-
               <button type="submit" name = "btnAdd" class="btn btn-info btn-fill pull-right">Add Account</button>
               <div class="clearfix"></div>
-
             </form>
           </div>
         </div>

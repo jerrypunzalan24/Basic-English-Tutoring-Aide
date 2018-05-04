@@ -23,7 +23,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'authuser'], function(){
   Route::post('/','DashboardController@updatecontent')->middleware('adminonly');
   Route::group(['prefix'=>'/gameslist'], function(){
     Route::get("/","DashboardController@gameslist");
-    Route::get('/monogatari/{game}','MonogatariController@index')->where(['game'=>'sachi|henrik']);
+    Route::get('/monogatari/{game}','MonogatariController@index')->where(['game' =>'sachi|henrik']);
   });
   Route::group(['prefix'=>'/lessons'], function(){
     Route::get("/", "DashboardController@lessons");

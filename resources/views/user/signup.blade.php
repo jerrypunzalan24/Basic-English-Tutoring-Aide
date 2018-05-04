@@ -58,7 +58,7 @@
               </div>
               <div class = 'row' align = 'center' style = 'padding-top: 20px'>
                 <div class = 'col-md-12'>
-                  <p class = 'category'><a href = 'login.php'>Go back</a></p>
+                  <p class = 'category'><a href = '/'>Go back</a></p>
                 </div>
               </div>
             </div>

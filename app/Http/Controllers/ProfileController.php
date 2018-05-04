@@ -32,7 +32,8 @@ class ProfileController extends Controller
       return redirect()->back()->with('error','Incorrect password');
     }
     else if($request->has('submitImage')){
-
+      // \DB::table('accounts')->where('id',$id)->update([
+      //   'display_picture' => ]);
     }
     return view('dashboard.user.edit',['account' => $account]);
   }

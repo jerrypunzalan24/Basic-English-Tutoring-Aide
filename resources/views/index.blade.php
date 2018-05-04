@@ -2,12 +2,11 @@
 <div class = 'body-bg' >
   <!-- end display notifcation -->
   <div class = 'row' >
-    <div class = 'col-md-6 side-bg'>
+    <div class = 'col-xs-6 side-bg'>
       <div class ='content' style = 'padding:40px;' >
-
       </div>
     </div>
-    <div class ='col-md-6' style ='padding-left:0' >
+    <div class ='col-xs-6' style ='padding-left:0' >
       <form method = 'POST' id = 'submit-form'  data-toggle = 'validator' role = 'form'>
         @csrf
         <div class = 'card' style = 'height:100%'>

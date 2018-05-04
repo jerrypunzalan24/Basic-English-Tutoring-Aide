@@ -197,7 +197,7 @@ var characters = {
 var script = {
 	// The game starts here.
 
-	"Start": [
+	"sachi": [
 		"play music bg-music loop",
 		"scene classroom",
 		"show sachi Happy center with fadeIn",
@@ -794,7 +794,7 @@ var script = {
 	],
 	// End Adjectives Questions
 	// Start Henrik's Supermarket
-	"Start1":[
+	"henrik":[
 		"play music bg-music loop",
 		"scene supermarket",
 		"show henrik Normal center with fadeIn",

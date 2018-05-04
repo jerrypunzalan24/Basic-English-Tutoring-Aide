@@ -269,9 +269,9 @@ $_ready(function() {
 
 				if (scenes[data["Engine"]["Scene"]] != null) {
 
-					$_("[data-menu='load'] [data-ui='saveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><img src='img/scenes/" + scenes[data["Engine"]["Scene"]] + "' alt=''><figcaption>" + getLocalizedString("Load") + " #" + i + "<small> " +data["Date"] + "</small></figcaption></figure>");
+					$_("[data-menu='load'] [data-ui='saveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><img src='${hostname}/monogatari-assets/img/scenes/" + scenes[data["Engine"]["Scene"]] + "' alt=''><figcaption>" + getLocalizedString("Load") + " #" + i + "<small> " +data["Date"] + "</small></figcaption></figure>");
 
-					$_("[data-menu='save'] [data-ui='slots']").append(`<figure data-save='${i}'><img src='img/scenes/${scenes[data["Engine"]["Scene"]]}' alt=''><figcaption>${getLocalizedString("Overwrite")} #${i}<small>${data["Date"]}</small></figcaption></figure>`);
+					$_("[data-menu='save'] [data-ui='slots']").append(`<figure data-save='${i}'><img src='${hostname}/monogatari-assets/img/scenes/${scenes[data["Engine"]["Scene"]]}' alt=''><figcaption>${getLocalizedString("Overwrite")} #${i}<small>${data["Date"]}</small></figcaption></figure>`);
 
 				} else {
 					$_("[data-menu='load'] [data-ui='saveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><figcaption>" + getLocalizedString("Load") + " #" + i + "<small> " +data["Date"] + "</small></figcaption></figure>");
@@ -289,7 +289,7 @@ $_ready(function() {
 				var data = JSON.parse(autoSaveSlot);
 
 				if (scenes[data["Engine"]["Scene"]] != null) {
-					$_("[data-menu='load'] [data-ui='autoSaveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><img src='img/scenes/" + scenes[data["Engine"]["Scene"]] + "' alt=''><figcaption>" + data["Date"] + " in " + data["Label"] + "</figcaption></figure>");
+					$_("[data-menu='load'] [data-ui='autoSaveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><img src='monogatari-assets/img/scenes/" + scenes[data["Engine"]["Scene"]] + "' alt=''><figcaption>" + data["Date"] + " in " + data["Label"] + "</figcaption></figure>");
 				} else {
 					$_("[data-menu='load'] [data-ui='autoSaveSlots'] [data-ui='slots']").append("<figure data-load-part='" + data["Label"] + "' data-load-element='" + data["Engine"]["Step"] + "' data-load-slot='" + i + "' class='animated flipInX'><figcaption>" + data["Date"] + " in " + data["Label"] + "</figcaption></figure>");
 				}
@@ -1113,12 +1113,12 @@ $_ready(function() {
 									}
 									if (typeof music !== 'undefined') {
 										if (music[last[2]] != null) {
-											music_player.setAttribute("src", "audio/music/" + music[last[2]]);
+											music_player.setAttribute("src", "monogatari-assets/audio/music/" + music[last[2]]);
 										} else {
-											music_player.setAttribute("src", "audio/music/" + last[2]);
+											music_player.setAttribute("src", "monogatari-assets/audio/music/" + last[2]);
 										}
 									} else {
-										music_player.setAttribute("src", "audio/music/" + last[2]);
+										music_player.setAttribute("src", "monogatari-assets/audio/music/" + last[2]);
 									}
 									music_player.play();
 									engine["Song"] = last.join(" ");
@@ -1134,12 +1134,12 @@ $_ready(function() {
 
 									if (typeof sound !== 'undefined') {
 										if (sound[last[2]] != null) {
-											sound_player.setAttribute("src", "audio/sound/" + sound[last[2]]);
+											sound_player.setAttribute("src", "monogatari-assets/audio/sound/" + sound[last[2]]);
 										} else {
-											sound_player.setAttribute("src", "audio/sound/" + last[2]);
+											sound_player.setAttribute("src", "monogatari-assets/audio/sound/" + last[2]);
 										}
 									} else {
-										sound_player.setAttribute("src", "audio/sound/" + last[2]);
+										sound_player.setAttribute("src", "monogatari-assets/audio/sound/" + last[2]);
 									}
 
 									sound_player.play();
@@ -1155,7 +1155,7 @@ $_ready(function() {
 									$_("[data-image]").remove();
 
 									if (scenes[parts[1]] != null) {
-										$_("[data-ui='background']").style("background", "url(img/scenes/" + scenes[engine["Scene"]] + ") center / cover no-repeat");
+										$_("[data-ui='background']").style("background", "url(127.0.0.1:8000/monogatari-assets/img/scenes/" + scenes[engine["Scene"]] + ") center / cover no-repeat");
 									} else {
 										$_("[data-ui='background']").style("background", engine["Scene"]);
 									}
@@ -1262,12 +1262,12 @@ $_ready(function() {
 								}
 								if (typeof music !== 'undefined') {
 									if (music[parts[2]] != null) {
-										music_player.setAttribute("src", "audio/music/" + music[parts[2]]);
+										music_player.setAttribute("src",  hostname +"monogatari-assets/audio/music/" + music[parts[2]]);
 									} else {
-										music_player.setAttribute("src", "audio/music/" + parts[2]);
+										music_player.setAttribute("src",  hostname + "monogatari-assets/audio/music/" + parts[2]);
 									}
 								} else {
-									music_player.setAttribute("src", "audio/music/" + parts[2]);
+									music_player.setAttribute("src", hostname +"monogatari-assets/audio/music/" + parts[2]);
 								}
 
 								music_player.play();
@@ -1284,12 +1284,12 @@ $_ready(function() {
 
 								if (typeof sound !== 'undefined') {
 									if (sound[parts[2]] != null) {
-										sound_player.setAttribute("src", "audio/sound/" + sound[parts[2]]);
+										sound_player.setAttribute("src",  hostname + "monogatari-assets/audio/sound/" + sound[parts[2]]);
 									} else {
-										sound_player.setAttribute("src", "audio/sound/" + parts[2]);
+										sound_player.setAttribute("src",  hostname + "monogatari-assets/audio/sound/" + parts[2]);
 									}
 								} else {
-									sound_player.setAttribute("src", "audio/sound/" + parts[2]);
+									sound_player.setAttribute("src",  hostname + "monogatari-assets/audio/sound/" + parts[2]);
 								}
 
 								sound_player.play();
@@ -1301,12 +1301,12 @@ $_ready(function() {
 
 								if (typeof voice !== 'undefined') {
 									if (voice[parts[2]] != null) {
-										voice_player.setAttribute("src", "audio/voice/" + voice[parts[2]]);
+										voice_player.setAttribute("src",  hostname + "monogatari-assets/audio/voice/" + voice[parts[2]]);
 									} else {
-										voice_player.setAttribute("src", "audio/voice/" + parts[2]);
+										voice_player.setAttribute("src",  hostname + "monogatari-assets/audio/voice/" + parts[2]);
 									}
 								} else {
-									voice_player.setAttribute("src", "audio/voice/" + parts[2]);
+									voice_player.setAttribute("src",  hostname + "monogatari-assets/audio/voice/" + parts[2]);
 								}
 
 								voice_player.play();
@@ -1338,7 +1338,7 @@ $_ready(function() {
 							// scene [scene]
 							//   0      1
 							if (scenes[parts[1]] != null) {
-								$_("[data-ui='background']").style("background", "url(img/scenes/" + scenes[parts[1]] + ") center / cover no-repeat");
+								$_("[data-ui='background']").style("background", "url(" + hostname + "/monogatari-assets/img/scenes/" + scenes[parts[1]] + ") center / cover no-repeat");
 							} else {
 								$_("[data-ui='background']").style("background", parts[1]);
 							}
@@ -1387,7 +1387,7 @@ $_ready(function() {
 								var classes = parts.join(" ").replace("show " + parts[1] +" "+ parts[2], "").replace(" at ", "").replace(" with ", " ");
 
 
-								$_("#game").append("<img src='img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
+								$_("#game").append("<img src='" + hostname  +"/monogatari-assets/img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
 								if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 									if (Screen.isLandscape()) {
 										$_("[data-character]").style("height", "80%");
@@ -1395,7 +1395,7 @@ $_ready(function() {
 										$_("[data-character]").style("height", "60%");
 									}
 								}
-								engine["CharacterHistory"].push("<img src='img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
+								engine["CharacterHistory"].push("<img src='" + hostname + "/monogatari-assets/img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
 
 							} else {
 								// show [image] at [position] with [animation]
@@ -1646,7 +1646,7 @@ $_ready(function() {
 											if (directory == null) {
 												directory = "";
 											}
-											$_("[data-ui='face']").attribute("src", "img/characters/" + directory + "/" + characters[character[0]]["Side"][character[1]]);
+											$_("[data-ui='face']").attribute("", "img/characters/" + directory + "/" + characters[character[0]]["Side"][character[1]]);
 											$_("[data-ui='face']").show();
 										} else {
 											$_("[data-ui='face']").hide();
@@ -1666,7 +1666,7 @@ $_ready(function() {
 									if (directory == null) {
 										directory = "";
 									}
-									$_("[data-ui='face']").attribute("src", "img/characters/" + directory + "/" + characters[parts[0]]["Face"]);
+									$_("[data-ui='face']").attribute("", "img/characters/" + directory + "/" + characters[parts[0]]["Face"]);
 									$_("[data-ui='face']").show();
 								} else {
 									$_("[data-ui='face']").hide();
